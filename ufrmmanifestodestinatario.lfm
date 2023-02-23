@@ -1,0 +1,6729 @@
+object frmManifestoDestinatario: TfrmManifestoDestinatario
+  Left = 259
+  Height = 869
+  Top = 84
+  Width = 1411
+  Caption = 'Manifesto - Documentos Fiscais'
+  ClientHeight = 869
+  ClientWidth = 1411
+  OnCreate = FormCreate
+  LCLVersion = '2.0.8.0'
+  object ToolBarPrincipal: TToolBar
+    Left = 0
+    Height = 64
+    Top = 0
+    Width = 1411
+    ButtonHeight = 55
+    ButtonWidth = 85
+    Color = clMenu
+    EdgeBorders = [ebLeft, ebTop, ebRight, ebBottom]
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Images = DM.ImageDM
+    ImagesWidth = 30
+    ParentColor = False
+    ParentFont = False
+    ShowCaptions = True
+    TabOrder = 0
+    object tbGravar: TToolButton
+      Left = 282
+      Hint = 'Gravar um registro'
+      Top = 2
+      Caption = 'Gravar'
+      ImageIndex = 8
+      OnClick = tbGravarClick
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object tbApagar: TToolButton
+      Left = 375
+      Hint = 'Apagar um registro'
+      Top = 2
+      Caption = 'Apagar'
+      ImageIndex = 6
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object tbAnterior: TToolButton
+      Left = 561
+      Hint = 'Ir para o registro anterior'
+      Top = 2
+      Caption = 'Registro Anterior'
+      ImageIndex = 2
+      OnClick = tbAnteriorClick
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object tbFechar: TToolButton
+      Left = 813
+      Hint = 'Fechar a janela'
+      Top = 2
+      Caption = 'Fechar'
+      ImageIndex = 0
+      OnClick = tbFecharClick
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object tbModificar: TToolButton
+      Left = 96
+      Hint = 'modificar um registro'
+      Top = 2
+      Caption = 'Modificar'
+      ImageIndex = 9
+      OnClick = tbModificarClick
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object tbCancelar: TToolButton
+      Left = 189
+      Hint = 'Cancelar inclusão do registro'
+      Top = 2
+      Caption = 'Cancelar'
+      ImageIndex = 5
+      OnClick = tbCancelarClick
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object tbBuscar: TToolButton
+      Left = 468
+      Hint = 'Procurar um registro'
+      Top = 2
+      Caption = 'Buscar'
+      ImageIndex = 10
+      OnClick = tbBuscarClick
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object tbProximo: TToolButton
+      Left = 686
+      Hint = 'Ir para o próximo registro'
+      Top = 2
+      Caption = 'Próximo Registro'
+      ImageIndex = 1
+      OnClick = tbProximoClick
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object ToolButton1: TToolButton
+      Left = 898
+      Height = 55
+      Top = 2
+      Caption = 'ToolButton1'
+      Style = tbsSeparator
+    end
+    object ToolButton2: TToolButton
+      Left = 274
+      Height = 55
+      Top = 2
+      Caption = 'ToolButton2'
+      Style = tbsSeparator
+    end
+    object ToolButton3: TToolButton
+      Left = 181
+      Height = 55
+      Top = 2
+      Caption = 'ToolButton3'
+      Style = tbsSeparator
+    end
+    object ToolButton4: TToolButton
+      Left = 367
+      Height = 55
+      Top = 2
+      Caption = 'ToolButton4'
+      Style = tbsSeparator
+    end
+    object ToolButton5: TToolButton
+      Left = 460
+      Height = 55
+      Top = 2
+      Caption = 'ToolButton5'
+      Style = tbsSeparator
+    end
+    object ToolButton6: TToolButton
+      Left = 553
+      Height = 55
+      Top = 2
+      Caption = 'ToolButton6'
+      Style = tbsSeparator
+    end
+    object ToolButton7: TToolButton
+      Left = 678
+      Height = 55
+      Top = 2
+      Caption = 'ToolButton7'
+      Style = tbsSeparator
+    end
+    object ToolButton8: TToolButton
+      Left = 805
+      Height = 55
+      Top = 2
+      Caption = 'ToolButton8'
+      Style = tbsSeparator
+    end
+    object tbIncluir: TToolButton
+      Left = 3
+      Hint = 'Incluir um novo registro'
+      Top = 2
+      Caption = 'Incluir'
+      ImageIndex = 13
+      OnClick = tbIncluirClick
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object ToolButton9: TToolButton
+      Left = 88
+      Height = 55
+      Top = 2
+      Caption = 'ToolButton9'
+      Style = tbsSeparator
+    end
+    object ToolButton10: TToolButton
+      Left = 906
+      Top = 2
+      Caption = 'Imprimir'
+      ImageIndex = 23
+      OnClick = ToolButton10Click
+    end
+  end
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 805
+    Top = 64
+    Width = 1411
+    ActivePage = TabSheet1
+    Align = alClient
+    TabIndex = 0
+    TabOrder = 1
+    object TabSheet1: TTabSheet
+      Caption = 'Dados'
+      ClientHeight = 776
+      ClientWidth = 1407
+      object PageControl2: TPageControl
+        Left = 0
+        Height = 776
+        Top = 0
+        Width = 1407
+        ActivePage = tsdados
+        Align = alClient
+        TabIndex = 0
+        TabOrder = 0
+        object tsdados: TTabSheet
+          Caption = 'Dados'
+          ClientHeight = 747
+          ClientWidth = 1403
+          object Panel1: TPanel
+            Left = 0
+            Height = 116
+            Top = 0
+            Width = 1403
+            Align = alTop
+            ClientHeight = 116
+            ClientWidth = 1403
+            TabOrder = 0
+            object GroupBox1: TGroupBox
+              Left = 1
+              Height = 114
+              Top = 1
+              Width = 185
+              Align = alLeft
+              ClientHeight = 110
+              ClientWidth = 181
+              TabOrder = 0
+              object Label1: TLabel
+                Left = 2
+                Height = 19
+                Top = 1
+                Width = 35
+                Caption = 'Série'
+                ParentColor = False
+              end
+              object Label2: TLabel
+                Left = 52
+                Height = 19
+                Top = 1
+                Width = 54
+                Caption = 'Número'
+                ParentColor = False
+              end
+              object Label3: TLabel
+                Left = 2
+                Height = 19
+                Top = 55
+                Width = 77
+                Caption = 'Modalidade'
+                ParentColor = False
+              end
+              object DBEdit1: TDBEdit
+                Left = 2
+                Height = 29
+                Top = 18
+                Width = 45
+                DataField = 'SERIE_DOC'
+                DataSource = dsMDFE
+                CharCase = ecNormal
+                MaxLength = 0
+                TabOrder = 0
+              end
+              object DBEdit2: TDBEdit
+                Left = 52
+                Height = 29
+                Top = 18
+                Width = 124
+                DataField = 'NUMERO_DOC'
+                DataSource = dsMDFE
+                Alignment = taRightJustify
+                CharCase = ecNormal
+                MaxLength = 0
+                TabOrder = 1
+              end
+              object lcbModalidade1: TDBLookupComboBox
+                Left = 2
+                Height = 29
+                Top = 75
+                Width = 174
+                DataField = 'MODALIDADE'
+                DataSource = dsMDFE
+                KeyField = 'TIPO'
+                ListField = 'DESCRICAO'
+                ListFieldIndex = 0
+                ListSource = dsModalidade
+                LookupCache = False
+                TabOrder = 2
+              end
+            end
+            object GroupBox2: TGroupBox
+              Left = 186
+              Height = 114
+              Top = 1
+              Width = 102
+              Align = alLeft
+              Caption = 'Emissão'
+              ClientHeight = 93
+              ClientWidth = 98
+              TabOrder = 1
+              object Label4: TLabel
+                Left = 5
+                Height = 19
+                Top = -4
+                Width = 32
+                Caption = 'Data'
+                ParentColor = False
+              end
+              object Label5: TLabel
+                Left = 5
+                Height = 19
+                Top = 43
+                Width = 33
+                Caption = 'Hora'
+                ParentColor = False
+              end
+              object DBEdit4: TDBEdit
+                Left = 5
+                Height = 29
+                Top = 14
+                Width = 85
+                DataField = 'DATA_EMISSAO'
+                DataSource = dsMDFE
+                CharCase = ecNormal
+                MaxLength = 0
+                TabOrder = 0
+              end
+              object DBEdit5: TDBEdit
+                Left = 5
+                Height = 29
+                Top = 61
+                Width = 85
+                DataField = 'HORA_EMISSAO'
+                DataSource = dsMDFE
+                CharCase = ecNormal
+                MaxLength = 0
+                TabOrder = 1
+              end
+            end
+            object GroupBox3: TGroupBox
+              Left = 288
+              Height = 114
+              Top = 1
+              Width = 102
+              Align = alLeft
+              Caption = 'Viagem'
+              ClientHeight = 93
+              ClientWidth = 98
+              TabOrder = 2
+              object Label6: TLabel
+                Left = 5
+                Height = 19
+                Top = -4
+                Width = 32
+                Caption = 'Data'
+                ParentColor = False
+              end
+              object Label7: TLabel
+                Left = 5
+                Height = 19
+                Top = 43
+                Width = 33
+                Caption = 'Hora'
+                ParentColor = False
+              end
+              object DBEdit6: TDBEdit
+                Left = 5
+                Height = 29
+                Top = 14
+                Width = 85
+                DataField = 'DATA_VIAGEM'
+                DataSource = dsMDFE
+                CharCase = ecNormal
+                MaxLength = 0
+                TabOrder = 0
+              end
+              object DBEdit7: TDBEdit
+                Left = 5
+                Height = 29
+                Top = 61
+                Width = 85
+                DataField = 'HORA_VIAGEM'
+                DataSource = dsMDFE
+                CharCase = ecNormal
+                MaxLength = 0
+                TabOrder = 1
+              end
+            end
+            object GroupBox4: TGroupBox
+              Left = 390
+              Height = 114
+              Top = 1
+              Width = 470
+              Align = alLeft
+              Anchors = [akTop, akLeft, akRight, akBottom]
+              ClientHeight = 110
+              ClientWidth = 466
+              TabOrder = 3
+              object Label8: TLabel
+                Left = 5
+                Height = 19
+                Top = 0
+                Width = 92
+                Caption = 'Tipo Emitente'
+                ParentColor = False
+              end
+              object Label9: TLabel
+                Left = 5
+                Height = 19
+                Top = 56
+                Width = 142
+                Caption = 'Tipo do transportador'
+                ParentColor = False
+              end
+              object Label10: TLabel
+                Left = 166
+                Height = 19
+                Top = 55
+                Width = 103
+                Caption = 'Forma Emissão'
+                ParentColor = False
+              end
+              object lcbEmitente1: TDBLookupComboBox
+                Left = 5
+                Height = 29
+                Top = 18
+                Width = 488
+                DataField = 'TIPO_EMITENTE'
+                DataSource = dsMDFE
+                KeyField = 'TIPO'
+                ListField = 'DESCRICAO'
+                ListFieldIndex = 0
+                ListSource = dsTipoEmitente
+                LookupCache = False
+                TabOrder = 0
+              end
+              object lcbTTransportador1: TDBLookupComboBox
+                Left = 5
+                Height = 29
+                Top = 75
+                Width = 152
+                DataField = 'TIPO_TRANSPORTADOR'
+                DataSource = dsMDFE
+                KeyField = 'TIPO'
+                ListField = 'DESCRICAO'
+                ListFieldIndex = 0
+                ListSource = dsTipoTransportador
+                LookupCache = False
+                TabOrder = 1
+              end
+              object lcbFEmisao1: TDBLookupComboBox
+                Left = 166
+                Height = 29
+                Top = 75
+                Width = 152
+                DataField = 'FORMA_EMISSAO'
+                DataSource = dsMDFE
+                KeyField = 'TIPO'
+                ListField = 'DESCRICAO'
+                ListFieldIndex = 0
+                ListSource = dsFormaEmissao
+                LookupCache = False
+                TabOrder = 2
+              end
+            end
+            object GroupBox5: TGroupBox
+              Left = 860
+              Height = 114
+              Top = 1
+              Width = 161
+              Align = alLeft
+              Caption = 'Locais'
+              ClientHeight = 93
+              ClientWidth = 157
+              TabOrder = 4
+              object Label11: TLabel
+                Left = 5
+                Height = 19
+                Top = -4
+                Width = 118
+                Caption = 'UF Carregamento'
+                ParentColor = False
+              end
+              object DBEdit11: TDBEdit
+                Left = 5
+                Height = 29
+                Top = 14
+                Width = 144
+                DataField = 'UF_CARREGAMENTO'
+                DataSource = dsMDFE
+                CharCase = ecNormal
+                MaxLength = 0
+                TabOrder = 0
+              end
+              object Label12: TLabel
+                Left = 5
+                Height = 19
+                Top = 43
+                Width = 141
+                Caption = 'UF Descarregamento'
+                ParentColor = False
+              end
+              object DBEdit12: TDBEdit
+                Left = 5
+                Height = 29
+                Top = 61
+                Width = 144
+                DataField = 'UF_DESCARREGAMENTO'
+                DataSource = dsMDFE
+                CharCase = ecNormal
+                MaxLength = 0
+                TabOrder = 1
+              end
+            end
+            object GroupBox6: TGroupBox
+              Left = 1021
+              Height = 114
+              Top = 1
+              Width = 281
+              Align = alClient
+              Caption = 'Cidade Carregamento'
+              ClientHeight = 93
+              ClientWidth = 277
+              TabOrder = 5
+              object DBGrid1: TDBGrid
+                Left = 0
+                Height = 93
+                Top = 0
+                Width = 277
+                Align = alClient
+                Color = clWindow
+                Columns = <                
+                  item
+                    Title.Caption = 'MDC_CIDADE'
+                    Width = 113
+                    FieldName = 'MDC_CIDADE'
+                  end                
+                  item
+                    Title.Caption = 'MDC_UF'
+                    Width = 77
+                    FieldName = 'MDC_UF'
+                  end>
+                DataSource = dsBuscaCarregamento
+                Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgAutoSizeColumns]
+                TabOrder = 0
+              end
+            end
+            object GroupBox7: TGroupBox
+              Left = 1302
+              Height = 114
+              Top = 1
+              Width = 100
+              Align = alRight
+              ClientHeight = 110
+              ClientWidth = 96
+              TabOrder = 6
+              object Label13: TLabel
+                Left = 5
+                Height = 19
+                Top = 0
+                Width = 59
+                Caption = 'Empresa'
+                ParentColor = False
+              end
+              object DBEdit13: TDBEdit
+                Left = 5
+                Height = 29
+                Top = 18
+                Width = 78
+                DataField = 'NF_EMPRESA'
+                DataSource = dsMDFE
+                Alignment = taRightJustify
+                CharCase = ecNormal
+                Color = 9096620
+                MaxLength = 0
+                TabOrder = 0
+              end
+              object Label14: TLabel
+                Left = 5
+                Height = 19
+                Top = 58
+                Width = 57
+                Caption = 'Situação'
+                ParentColor = False
+              end
+              object DBEdit14: TDBEdit
+                Left = 5
+                Height = 29
+                Top = 76
+                Width = 78
+                DataField = 'STATUS_MDFE'
+                DataSource = dsMDFE
+                CharCase = ecNormal
+                Color = 9096620
+                MaxLength = 0
+                TabOrder = 1
+              end
+            end
+          end
+          object PageControl3: TPageControl
+            Left = 0
+            Height = 567
+            Top = 116
+            Width = 1403
+            ActivePage = TabSheet5
+            Align = alClient
+            TabIndex = 0
+            TabOrder = 1
+            object TabSheet5: TTabSheet
+              Caption = 'Transporte'
+              ClientHeight = 538
+              ClientWidth = 1399
+              object PageControl4: TPageControl
+                Left = 993
+                Height = 182
+                Top = 0
+                Width = 406
+                ActivePage = TabSheet9
+                Align = alClient
+                TabIndex = 0
+                TabOrder = 0
+                OnChange = PageControl4Change
+                object TabSheet9: TTabSheet
+                  Caption = 'Condutores'
+                  ClientHeight = 153
+                  ClientWidth = 402
+                  object DBGrid3: TDBGrid
+                    Left = 0
+                    Height = 153
+                    Top = 0
+                    Width = 402
+                    Align = alClient
+                    Color = clWindow
+                    Columns = <>
+                    DataSource = dsMDFE_CONDUTORES
+                    TabOrder = 0
+                  end
+                end
+                object TabSheet10: TTabSheet
+                  Caption = 'Percursos'
+                  ClientHeight = 153
+                  ClientWidth = 402
+                  object DBGrid2: TDBGrid
+                    Left = 0
+                    Height = 153
+                    Top = 0
+                    Width = 402
+                    Align = alClient
+                    Color = clWindow
+                    Columns = <                    
+                      item
+                        Title.Caption = 'MDFE_ID'
+                        FieldName = 'MDFE_ID'
+                      end                    
+                      item
+                        Title.Caption = 'MPE_ID'
+                        FieldName = 'MPE_ID'
+                      end                    
+                      item
+                        Title.Caption = 'MPE_UF'
+                        FieldName = 'MPE_UF'
+                      end>
+                    DataSource = dsMDFE_PERCURSO
+                    TabOrder = 0
+                  end
+                end
+              end
+              object GroupBox8: TGroupBox
+                Left = 0
+                Height = 182
+                Top = 0
+                Width = 277
+                Align = alLeft
+                Caption = 'Veículo'
+                ClientHeight = 161
+                ClientWidth = 273
+                TabOrder = 1
+                object Label15: TLabel
+                  Left = 5
+                  Height = 19
+                  Top = 0
+                  Width = 36
+                  Caption = 'Placa'
+                  ParentColor = False
+                end
+                object DBEdit15: TDBEdit
+                  Left = 5
+                  Height = 29
+                  Top = 17
+                  Width = 74
+                  DataField = 'MDV_PLACA'
+                  DataSource = dsMDFE_VEICULOS
+                  CharCase = ecNormal
+                  MaxLength = 0
+                  TabOrder = 0
+                end
+                object Label16: TLabel
+                  Left = 80
+                  Height = 19
+                  Top = 0
+                  Width = 19
+                  Caption = 'UF'
+                  ParentColor = False
+                end
+                object Label17: TLabel
+                  Left = 5
+                  Height = 19
+                  Top = 50
+                  Width = 81
+                  Caption = 'Tipo Rodado'
+                  ParentColor = False
+                end
+                object Label18: TLabel
+                  Left = 5
+                  Height = 19
+                  Top = 102
+                  Width = 103
+                  Caption = 'Tipo Carroceria'
+                  ParentColor = False
+                end
+                object Label19: TLabel
+                  Left = 128
+                  Height = 17
+                  Top = 0
+                  Width = 101
+                  Caption = 'Tara Veículo KG'
+                  Font.Height = -13
+                  Font.Name = 'Sans'
+                  ParentColor = False
+                  ParentFont = False
+                end
+                object Label20: TLabel
+                  Left = 128
+                  Height = 19
+                  Top = 50
+                  Width = 100
+                  Caption = 'Capacidade KG'
+                  ParentColor = False
+                end
+                object Label21: TLabel
+                  Left = 128
+                  Height = 19
+                  Top = 102
+                  Width = 101
+                  Caption = 'Capacidade M3'
+                  ParentColor = False
+                end
+                object DBEdit16: TDBEdit
+                  Left = 80
+                  Height = 29
+                  Top = 17
+                  Width = 39
+                  DataField = 'MDV_UF'
+                  DataSource = dsMDFE_VEICULOS
+                  CharCase = ecNormal
+                  MaxLength = 0
+                  TabOrder = 1
+                end
+                object DBEdit19: TDBEdit
+                  Left = 128
+                  Height = 29
+                  Top = 17
+                  Width = 114
+                  DataField = 'MDV_TARA'
+                  DataSource = dsMDFE_VEICULOS
+                  CharCase = ecNormal
+                  MaxLength = 0
+                  TabOrder = 2
+                end
+                object DBEdit20: TDBEdit
+                  Left = 128
+                  Height = 29
+                  Top = 69
+                  Width = 114
+                  DataField = 'MDV_CAPACIDADE_KG'
+                  DataSource = dsMDFE_VEICULOS
+                  CharCase = ecNormal
+                  MaxLength = 0
+                  TabOrder = 3
+                end
+                object DBEdit21: TDBEdit
+                  Left = 128
+                  Height = 29
+                  Top = 120
+                  Width = 114
+                  DataField = 'MDV_CAPACIDADE_M3'
+                  DataSource = dsMDFE_VEICULOS
+                  CharCase = ecNormal
+                  MaxLength = 0
+                  TabOrder = 4
+                end
+                object DBLookupComboBox9: TDBLookupComboBox
+                  Left = 5
+                  Height = 29
+                  Top = 69
+                  Width = 114
+                  DataField = 'MDV_RODADO'
+                  DataSource = dsMDFE_VEICULOS
+                  KeyField = 'TIPO'
+                  ListField = 'DESCRICAO'
+                  ListFieldIndex = 0
+                  ListSource = dsTipoRodado
+                  LookupCache = False
+                  TabOrder = 5
+                end
+                object DBLookupComboBox10: TDBLookupComboBox
+                  Left = 5
+                  Height = 29
+                  Top = 120
+                  Width = 114
+                  DataField = 'MDV_CARROCERIA'
+                  DataSource = dsMDFE_VEICULOS
+                  KeyField = 'TIPO'
+                  ListField = 'DESCRICAO'
+                  ListFieldIndex = 0
+                  ListSource = dsTipoCarroceria
+                  LookupCache = False
+                  TabOrder = 6
+                end
+              end
+              object GroupBox12: TGroupBox
+                Left = 277
+                Height = 182
+                Top = 0
+                Width = 716
+                Align = alLeft
+                Anchors = [akTop, akLeft, akRight, akBottom]
+                Caption = '-'
+                ClientHeight = 161
+                ClientWidth = 712
+                TabOrder = 2
+                object Panel21: TPanel
+                  Left = 0
+                  Height = 1
+                  Top = -17
+                  Width = 1
+                  AutoSize = True
+                  TabOrder = 0
+                end
+                object Label82: TLabel
+                  Left = 144
+                  Height = 15
+                  Top = 20
+                  Width = 25
+                  Caption = 'Tipo'
+                  Font.Height = -12
+                  Font.Name = 'Sans'
+                  ParentColor = False
+                  ParentFont = False
+                end
+                object Label83: TLabel
+                  Left = 371
+                  Height = 17
+                  Top = 19
+                  Width = 44
+                  Caption = 'RNTRC'
+                  Font.Height = -13
+                  Font.Name = 'Sans'
+                  ParentColor = False
+                  ParentFont = False
+                end
+                object Label84: TLabel
+                  Left = 517
+                  Height = 17
+                  Top = 19
+                  Width = 17
+                  Caption = 'UF'
+                  Font.Height = -13
+                  Font.Name = 'Sans'
+                  ParentColor = False
+                  ParentFont = False
+                end
+                object Label86: TLabel
+                  Left = 372
+                  Height = 19
+                  Top = 67
+                  Width = 90
+                  Caption = 'Insc. Estadual'
+                  ParentColor = False
+                end
+                object Label87: TLabel
+                  Left = 8
+                  Height = 17
+                  Top = 114
+                  Width = 39
+                  Caption = 'Nome'
+                  Font.Height = -13
+                  Font.Name = 'Sans'
+                  ParentColor = False
+                  ParentFont = False
+                end
+                object Label81: TLabel
+                  Left = 8
+                  Height = 15
+                  Top = 20
+                  Width = 121
+                  Caption = 'Cód. Interno Veículo'
+                  Font.Height = -12
+                  Font.Name = 'Sans'
+                  ParentColor = False
+                  ParentFont = False
+                end
+                object Label88: TLabel
+                  Left = 8
+                  Height = 17
+                  Top = 69
+                  Width = 59
+                  Caption = 'CNPJ/CPF'
+                  Font.Height = -13
+                  Font.Name = 'Sans'
+                  ParentColor = False
+                  ParentFont = False
+                end
+                object DBEdit22: TDBEdit
+                  Left = 8
+                  Height = 29
+                  Top = 37
+                  Width = 131
+                  DataField = 'MDV_COD_INTERNO'
+                  DataSource = dsMDFE_VEICULOS
+                  CharCase = ecNormal
+                  Enabled = False
+                  MaxLength = 0
+                  TabOrder = 1
+                end
+                object DBEdit23: TDBEdit
+                  Left = 8
+                  Height = 29
+                  Top = 85
+                  Width = 360
+                  DataField = 'MDV_PROP_CNPJ_CPF'
+                  DataSource = dsMDFE_VEICULOS
+                  CharCase = ecNormal
+                  Enabled = False
+                  MaxLength = 0
+                  TabOrder = 2
+                end
+                object DBEdit24: TDBEdit
+                  Left = 8
+                  Height = 29
+                  Top = 129
+                  Width = 584
+                  DataField = 'MDV_PROP_NOME'
+                  DataSource = dsMDFE_VEICULOS
+                  CharCase = ecNormal
+                  Enabled = False
+                  MaxLength = 0
+                  TabOrder = 3
+                end
+                object DBEdit25: TDBEdit
+                  Left = 371
+                  Height = 29
+                  Top = 37
+                  Width = 144
+                  DataField = 'MDV_PROP_RNTRC'
+                  DataSource = dsMDFE_VEICULOS
+                  CharCase = ecNormal
+                  Enabled = False
+                  MaxLength = 0
+                  TabOrder = 4
+                end
+                object DBEdit26: TDBEdit
+                  Left = 517
+                  Height = 29
+                  Top = 37
+                  Width = 51
+                  DataField = 'MDV_PROP_UF'
+                  DataSource = dsMDFE_VEICULOS
+                  CharCase = ecNormal
+                  Enabled = False
+                  MaxLength = 0
+                  TabOrder = 5
+                end
+                object DBEdit27: TDBEdit
+                  Left = 371
+                  Height = 29
+                  Top = 85
+                  Width = 144
+                  DataField = 'MDV_PROP_INSC_ESTADUAL'
+                  DataSource = dsMDFE_VEICULOS
+                  CharCase = ecNormal
+                  Enabled = False
+                  MaxLength = 0
+                  TabOrder = 6
+                end
+                object DBEdit28: TDBEdit
+                  Left = 144
+                  Height = 29
+                  Top = 37
+                  Width = 224
+                  DataField = 'MDV_COD_INTERNO'
+                  DataSource = dsMDFE_VEICULOS
+                  CharCase = ecNormal
+                  Enabled = False
+                  MaxLength = 0
+                  TabOrder = 7
+                end
+                object checkProprietario1: TDBCheckBox
+                  Left = 2
+                  Height = 23
+                  Top = -9
+                  Width = 264
+                  Caption = 'Proprietário Diferente do Emitente'
+                  DataField = 'MDV_PROP_DEFINIDO'
+                  DataSource = dsMDFE_VEICULOS
+                  OnChange = checkProprietario1Change
+                  OnClick = checkProprietario1Click
+                  TabOrder = 8
+                  ValueChecked = 'S'
+                  ValueUnchecked = 'N'
+                end
+              end
+              object GroupBox9: TGroupBox
+                Left = 0
+                Height = 356
+                Top = 182
+                Width = 1399
+                Align = alBottom
+                Anchors = [akTop, akLeft, akRight, akBottom]
+                Caption = 'Reboques'
+                ClientHeight = 335
+                ClientWidth = 1395
+                TabOrder = 3
+                object DBGrid4: TDBGrid
+                  Left = 0
+                  Height = 335
+                  Top = 0
+                  Width = 1395
+                  Align = alClient
+                  Color = clWindow
+                  Columns = <>
+                  DataSource = dsReboques
+                  TabOrder = 0
+                end
+              end
+            end
+            object TabSheet6: TTabSheet
+              Caption = 'Documentos'
+              ClientHeight = 538
+              ClientWidth = 1399
+              object GroupBox10: TGroupBox
+                Left = 0
+                Height = 538
+                Top = 0
+                Width = 265
+                Align = alLeft
+                Caption = 'Descarregamento'
+                ClientHeight = 517
+                ClientWidth = 261
+                TabOrder = 0
+                object DBGrid5: TDBGrid
+                  Left = 0
+                  Height = 517
+                  Top = 0
+                  Width = 261
+                  Align = alClient
+                  Color = clWindow
+                  Columns = <                  
+                    item
+                      Title.Caption = 'MDFE_ID'
+                      Visible = False
+                      FieldName = 'MDFE_ID'
+                    end                  
+                    item
+                      Title.Caption = 'NF_EMPRESA'
+                      Visible = False
+                      FieldName = 'NF_EMPRESA'
+                    end                  
+                    item
+                      Title.Caption = 'DATA_EMISSAO'
+                      Visible = False
+                      FieldName = 'DATA_EMISSAO'
+                    end                  
+                    item
+                      Title.Caption = 'SERIE_DOC'
+                      Visible = False
+                      FieldName = 'SERIE_DOC'
+                    end                  
+                    item
+                      Title.Caption = 'FORMA_EMISSAO'
+                      Visible = False
+                      FieldName = 'FORMA_EMISSAO'
+                    end                  
+                    item
+                      Title.Caption = 'TIPO_EMITENTE'
+                      Visible = False
+                      FieldName = 'TIPO_EMITENTE'
+                    end                  
+                    item
+                      Title.Caption = 'MODALIDADE'
+                      Visible = False
+                      FieldName = 'MODALIDADE'
+                    end                  
+                    item
+                      Title.Caption = 'NUMERO_DOC'
+                      Visible = False
+                      FieldName = 'NUMERO_DOC'
+                    end                  
+                    item
+                      Title.Caption = 'HORA_EMISSAO'
+                      Visible = False
+                      FieldName = 'HORA_EMISSAO'
+                    end                  
+                    item
+                      Title.Caption = 'DATA_VIAGEM'
+                      Visible = False
+                      FieldName = 'DATA_VIAGEM'
+                    end                  
+                    item
+                      Title.Caption = 'HORA_VIAGEM'
+                      Visible = False
+                      FieldName = 'HORA_VIAGEM'
+                    end                  
+                    item
+                      Title.Caption = 'MODELO_DOC'
+                      Visible = False
+                      FieldName = 'MODELO_DOC'
+                    end                  
+                    item
+                      Title.Caption = 'STATUS_MDFE'
+                      Visible = False
+                      FieldName = 'STATUS_MDFE'
+                    end                  
+                    item
+                      Title.Caption = 'OBS'
+                      Visible = False
+                      FieldName = 'OBS'
+                    end                  
+                    item
+                      Title.Caption = 'UF_CARREGAMENTO'
+                      Visible = False
+                      FieldName = 'UF_CARREGAMENTO'
+                    end                  
+                    item
+                      Title.Caption = 'UF_DESCARREGAMENTO'
+                      FieldName = 'UF_DESCARREGAMENTO'
+                    end                  
+                    item
+                      Title.Caption = 'TIPO_TRANSPORTADOR'
+                      Visible = False
+                      FieldName = 'TIPO_TRANSPORTADOR'
+                    end                  
+                    item
+                      Title.Caption = 'TOT_CTE'
+                      Visible = False
+                      FieldName = 'TOT_CTE'
+                    end                  
+                    item
+                      Title.Caption = 'TOT_NFE'
+                      Visible = False
+                      FieldName = 'TOT_NFE'
+                    end                  
+                    item
+                      Title.Caption = 'TOT_NF1_NF1A'
+                      Visible = False
+                      FieldName = 'TOT_NF1_NF1A'
+                    end                  
+                    item
+                      Title.Caption = 'TOT_MERCADORIAS'
+                      Visible = False
+                      FieldName = 'TOT_MERCADORIAS'
+                    end                  
+                    item
+                      Title.Caption = 'TOT_PESO'
+                      Visible = False
+                      FieldName = 'TOT_PESO'
+                    end                  
+                    item
+                      Title.Caption = 'UND_MEDIDA'
+                      Visible = False
+                      FieldName = 'UND_MEDIDA'
+                    end                  
+                    item
+                      Title.Caption = 'EMITENTE_LETRA'
+                      Visible = False
+                      FieldName = 'EMITENTE_LETRA'
+                    end                  
+                    item
+                      Title.Caption = 'MODALIDADE_LETRA'
+                      Visible = False
+                      FieldName = 'MODALIDADE_LETRA'
+                    end                  
+                    item
+                      Title.Caption = 'TRANSPORTADOR_LETRA'
+                      Visible = False
+                      FieldName = 'TRANSPORTADOR_LETRA'
+                    end                  
+                    item
+                      Title.Caption = 'EMISSAO_LETRA'
+                      Visible = False
+                      FieldName = 'EMISSAO_LETRA'
+                    end>
+                  DataSource = dsMDFE
+                  ReadOnly = True
+                  TabOrder = 0
+                end
+              end
+              object GroupBox11: TGroupBox
+                Left = 265
+                Height = 538
+                Top = 0
+                Width = 1134
+                Align = alClient
+                Caption = 'Documento para Descarregamento (Cidades - UF)'
+                ClientHeight = 517
+                ClientWidth = 1130
+                TabOrder = 1
+                object DBGrid6: TDBGrid
+                  Left = 0
+                  Height = 517
+                  Top = 0
+                  Width = 1130
+                  Align = alClient
+                  Color = clWindow
+                  Columns = <                  
+                    item
+                      Title.Caption = 'Chave'
+                      Width = 56
+                      FieldName = 'MDD_CHAVE'
+                    end                  
+                    item
+                      Title.Caption = 'Seg. Cod. Barra'
+                      Width = 118
+                      FieldName = 'MDD_SEG_COD_BARRA'
+                    end                  
+                    item
+                      Title.Caption = 'Valor'
+                      Width = 50
+                      FieldName = 'MDD_VALOR'
+                    end                  
+                    item
+                      Title.Caption = 'Peso'
+                      Width = 47
+                      FieldName = 'MDD_PESO'
+                    end>
+                  DataSource = dsDOCUMENTOS
+                  Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgAutoSizeColumns]
+                  ReadOnly = True
+                  TabOrder = 0
+                end
+              end
+            end
+            object TabSheet7: TTabSheet
+              Caption = 'Totalizadores'
+              ClientHeight = 538
+              ClientWidth = 1399
+              object Label26: TLabel
+                Left = 4
+                Height = 19
+                Top = 18
+                Width = 133
+                Caption = 'Quantidade de CT-e'
+                ParentColor = False
+              end
+              object Label27: TLabel
+                Left = 3
+                Height = 19
+                Top = 51
+                Width = 134
+                Caption = 'Quantidade de NF-e'
+                ParentColor = False
+              end
+              object Label28: TLabel
+                Left = 3
+                Height = 19
+                Top = 85
+                Width = 166
+                Caption = 'Quantidade de NF-e 1/1A'
+                ParentColor = False
+              end
+              object Label29: TLabel
+                Left = 3
+                Height = 19
+                Top = 118
+                Width = 177
+                Caption = 'Total da Carga/Mercadoria'
+                ParentColor = False
+              end
+              object Label30: TLabel
+                Left = 3
+                Height = 19
+                Top = 154
+                Width = 199
+                Caption = 'Unidade Medida do peso Bruto'
+                ParentColor = False
+              end
+              object Label31: TLabel
+                Left = 4
+                Height = 19
+                Top = 189
+                Width = 196
+                Caption = 'Peso Bruto Carga/Mercadoria'
+                ParentColor = False
+              end
+              object DBEdit29: TDBEdit
+                Left = 150
+                Height = 29
+                Top = 8
+                Width = 210
+                DataField = 'TOT_CTE'
+                DataSource = dsMDFE
+                Alignment = taRightJustify
+                CharCase = ecNormal
+                Font.Color = clBlack
+                MaxLength = 0
+                ParentFont = False
+                TabOrder = 0
+              end
+              object DBEdit30: TDBEdit
+                Left = 150
+                Height = 29
+                Top = 41
+                Width = 210
+                DataField = 'TOT_NFE'
+                DataSource = dsMDFE
+                Alignment = taRightJustify
+                CharCase = ecNormal
+                Font.Color = clBlack
+                MaxLength = 0
+                ParentFont = False
+                TabOrder = 1
+              end
+              object DBEdit31: TDBEdit
+                Left = 177
+                Height = 29
+                Top = 75
+                Width = 183
+                DataField = 'TOT_NF1_NF1A'
+                DataSource = dsMDFE
+                Alignment = taRightJustify
+                CharCase = ecNormal
+                Font.Color = clBlack
+                MaxLength = 0
+                ParentFont = False
+                TabOrder = 2
+              end
+              object DBEdit32: TDBEdit
+                Left = 209
+                Height = 29
+                Top = 108
+                Width = 151
+                DataField = 'TOT_MERCADORIAS'
+                DataSource = dsMDFE
+                Alignment = taRightJustify
+                CharCase = ecNormal
+                Font.Color = clBlack
+                MaxLength = 0
+                ParentFont = False
+                TabOrder = 3
+              end
+              object DBEdit33: TDBEdit
+                Left = 209
+                Height = 29
+                Top = 179
+                Width = 151
+                DataField = 'TOT_MERCADORIAS'
+                DataSource = dsMDFE
+                Alignment = taRightJustify
+                CharCase = ecNormal
+                Font.Color = clBlack
+                MaxLength = 0
+                ParentFont = False
+                TabOrder = 4
+              end
+              object DBEdit34: TDBEdit
+                Left = 209
+                Height = 29
+                Top = 144
+                Width = 151
+                DataField = 'TOT_PESO'
+                DataSource = dsMDFE
+                Alignment = taRightJustify
+                CharCase = ecNormal
+                Font.Color = clBlack
+                MaxLength = 0
+                ParentFont = False
+                TabOrder = 5
+              end
+            end
+            object TabSheet8: TTabSheet
+              Caption = 'Informações Adicionais'
+              ClientHeight = 538
+              ClientWidth = 1399
+              object DBMemo1: TDBMemo
+                Left = 0
+                Height = 538
+                Top = 0
+                Width = 1510
+                Align = alClient
+                DataField = 'OBS'
+                DataSource = dsMDFE
+                TabOrder = 0
+              end
+            end
+          end
+          object Panel2: TPanel
+            Left = 0
+            Height = 64
+            Top = 683
+            Width = 1403
+            Align = alBottom
+            ClientHeight = 64
+            ClientWidth = 1403
+            TabOrder = 2
+            object Label22: TLabel
+              Left = 8
+              Height = 19
+              Top = 4
+              Width = 63
+              Caption = 'Protocolo'
+              ParentColor = False
+            end
+            object Label23: TLabel
+              Left = 160
+              Height = 19
+              Top = 4
+              Width = 48
+              Caption = 'Chaves'
+              ParentColor = False
+            end
+            object Label24: TLabel
+              Left = 624
+              Height = 19
+              Top = 4
+              Width = 42
+              Caption = 'Status'
+              ParentColor = False
+            end
+            object DBEdit35: TDBEdit
+              Left = 8
+              Height = 29
+              Top = 24
+              Width = 144
+              CharCase = ecNormal
+              Color = 9096620
+              MaxLength = 0
+              TabOrder = 0
+            end
+            object DBEdit36: TDBEdit
+              Left = 160
+              Height = 29
+              Top = 24
+              Width = 456
+              CharCase = ecNormal
+              Color = 9096620
+              MaxLength = 0
+              TabOrder = 1
+            end
+            object DBEdit37: TDBEdit
+              Left = 624
+              Height = 29
+              Top = 24
+              Width = 184
+              CharCase = ecNormal
+              Color = 9096620
+              MaxLength = 0
+              TabOrder = 2
+            end
+          end
+        end
+        object tsAssistente: TTabSheet
+          Caption = 'Assistente'
+          ClientHeight = 747
+          ClientWidth = 1403
+          object Panel3: TPanel
+            Left = 0
+            Height = 208
+            Top = 0
+            Width = 1403
+            Align = alTop
+            ClientHeight = 208
+            ClientWidth = 1403
+            TabOrder = 0
+            object GroupBox13: TGroupBox
+              Left = 1
+              Height = 206
+              Top = 1
+              Width = 655
+              Align = alLeft
+              Anchors = [akTop, akLeft, akRight, akBottom]
+              Caption = 'Emitente'
+              ClientHeight = 185
+              ClientWidth = 651
+              Color = clWhite
+              ParentColor = False
+              TabOrder = 0
+              object Label25: TLabel
+                Left = 4
+                Height = 19
+                Top = 5
+                Width = 35
+                Caption = 'Série'
+                ParentColor = False
+              end
+              object SpeedButton1: TSpeedButton
+                Left = 68
+                Height = 29
+                Top = 24
+                Width = 27
+                Images = DM.ImageDM
+                ImageIndex = 24
+                ImageWidth = 23
+                OnClick = SpeedButton1Click
+              end
+              object DBDateEdit1: TDBDateEdit
+                Left = 100
+                Height = 29
+                Top = 24
+                Width = 119
+                CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+                DateOrder = doDMY
+                DateFormat = 'DD/MM/YYYY'
+                ButtonWidth = 23
+                NumGlyphs = 1
+                MaxLength = 10
+                TabOrder = 0
+                Text = '  /  /    '
+                DataField = 'DATA_VIAGEM'
+                DataSource = dsMDFE
+              end
+              object Label32: TLabel
+                Left = 99
+                Height = 19
+                Top = 5
+                Width = 85
+                Caption = 'Data Viagem'
+                ParentColor = False
+              end
+              object Label33: TLabel
+                Left = 222
+                Height = 19
+                Top = 5
+                Width = 86
+                Caption = 'Hora Viagem'
+                ParentColor = False
+              end
+              object Label34: TLabel
+                Left = 321
+                Height = 19
+                Top = 5
+                Width = 118
+                Caption = 'UF Carregamento'
+                ParentColor = False
+              end
+              object lcbUFC: TDBLookupComboBox
+                Left = 321
+                Height = 31
+                Top = 24
+                Width = 328
+                DataField = 'UF_CARREGAMENTO'
+                DataSource = dsMDFE
+                KeyField = 'SIGLA'
+                ListField = 'SIGLA'
+                ListFieldIndex = 0
+                ListSource = dsUFCarregamento
+                LookupCache = False
+                Style = csDropDownList
+                TabOrder = 1
+              end
+              object Label35: TLabel
+                Left = 4
+                Height = 19
+                Top = 59
+                Width = 92
+                Caption = 'Tipo Emitente'
+                ParentColor = False
+              end
+              object Label36: TLabel
+                Left = 4
+                Height = 19
+                Top = 116
+                Width = 77
+                Caption = 'Modalidade'
+                ParentColor = False
+              end
+              object Label37: TLabel
+                Left = 497
+                Height = 19
+                Top = 116
+                Width = 103
+                Caption = 'Forma Emissão'
+                ParentColor = False
+              end
+              object Label38: TLabel
+                Left = 497
+                Height = 19
+                Top = 59
+                Width = 142
+                Caption = 'Tipo do transportador'
+                ParentColor = False
+              end
+              object lcbTTransportador: TDBLookupComboBox
+                Left = 497
+                Height = 31
+                Top = 78
+                Width = 152
+                DataField = 'TIPO_TRANSPORTADOR'
+                DataSource = dsMDFE
+                KeyField = 'TIPO'
+                ListField = 'DESCRICAO'
+                ListFieldIndex = 0
+                ListSource = dsTipoTransportador
+                LookupCache = False
+                Style = csDropDownList
+                TabOrder = 2
+              end
+              object lcbFEmisao: TDBLookupComboBox
+                Left = 497
+                Height = 31
+                Top = 133
+                Width = 152
+                DataField = 'FORMA_EMISSAO'
+                DataSource = dsMDFE
+                KeyField = 'TIPO'
+                ListField = 'DESCRICAO'
+                ListFieldIndex = 0
+                ListSource = dsFormaEmissao
+                LookupCache = False
+                Style = csDropDownList
+                TabOrder = 3
+              end
+              object edtserie: TEdit
+                Left = 4
+                Height = 29
+                Top = 24
+                Width = 63
+                TabOrder = 4
+                Text = '4'
+              end
+              object lcbEmitente: TDBLookupComboBox
+                Left = 4
+                Height = 31
+                Top = 78
+                Width = 488
+                DataField = 'TIPO_EMITENTE'
+                DataSource = dsMDFE
+                KeyField = 'TIPO'
+                ListField = 'DESCRICAO'
+                ListFieldIndex = 0
+                ListSource = dsTipoEmitente
+                LookupCache = False
+                Style = csDropDownList
+                TabOrder = 5
+              end
+              object DBEdit38: TDBEdit
+                Left = 224
+                Height = 29
+                Top = 24
+                Width = 91
+                DataField = 'HORA_VIAGEM'
+                DataSource = dsMDFE
+                CharCase = ecNormal
+                MaxLength = 0
+                TabOrder = 6
+                OnChange = DBEdit38Change
+                OnKeyPress = DBEdit38KeyPress
+              end
+              object lcbModalidade: TDBLookupComboBox
+                Left = 4
+                Height = 31
+                Top = 133
+                Width = 488
+                DataField = 'MODALIDADE'
+                DataSource = dsMDFE
+                KeyField = 'TIPO'
+                ListField = 'DESCRICAO'
+                ListFieldIndex = 0
+                ListSource = dsModalidade
+                LookupCache = False
+                Style = csDropDownList
+                TabOrder = 7
+              end
+            end
+            object PageControl5: TPageControl
+              Left = 656
+              Height = 206
+              Top = 1
+              Width = 746
+              ActivePage = TabSheet11
+              Align = alClient
+              TabIndex = 0
+              TabOrder = 1
+              object TabSheet11: TTabSheet
+                Caption = 'Tração'
+                ClientHeight = 177
+                ClientWidth = 742
+                object GroupBox14: TGroupBox
+                  Left = 0
+                  Height = 177
+                  Top = 0
+                  Width = 277
+                  Align = alLeft
+                  Caption = 'Veículo'
+                  ClientHeight = 156
+                  ClientWidth = 273
+                  Color = clWhite
+                  ParentColor = False
+                  TabOrder = 0
+                  object Label39: TLabel
+                    Left = 33
+                    Height = 19
+                    Top = 0
+                    Width = 36
+                    Caption = 'Placa'
+                    ParentColor = False
+                  end
+                  object Label40: TLabel
+                    Left = 114
+                    Height = 19
+                    Top = 0
+                    Width = 19
+                    Caption = 'UF'
+                    ParentColor = False
+                  end
+                  object Label41: TLabel
+                    Left = 2
+                    Height = 19
+                    Top = 52
+                    Width = 81
+                    Caption = 'Tipo Rodado'
+                    ParentColor = False
+                  end
+                  object Label42: TLabel
+                    Left = 2
+                    Height = 19
+                    Top = 104
+                    Width = 103
+                    Caption = 'Tipo Carroceria'
+                    ParentColor = False
+                  end
+                  object Label43: TLabel
+                    Left = 155
+                    Height = 17
+                    Top = 0
+                    Width = 101
+                    Caption = 'Tara Veículo KG'
+                    Font.Height = -13
+                    Font.Name = 'Sans'
+                    ParentColor = False
+                    ParentFont = False
+                  end
+                  object Label44: TLabel
+                    Left = 155
+                    Height = 19
+                    Top = 52
+                    Width = 100
+                    Caption = 'Capacidade KG'
+                    ParentColor = False
+                  end
+                  object Label45: TLabel
+                    Left = 155
+                    Height = 19
+                    Top = 104
+                    Width = 101
+                    Caption = 'Capacidade M3'
+                    ParentColor = False
+                  end
+                  object DBEdit44: TDBEdit
+                    Left = 155
+                    Height = 29
+                    Top = 17
+                    Width = 114
+                    DataField = 'MDV_TARA'
+                    DataSource = dsMDFE_VEICULOS
+                    Alignment = taRightJustify
+                    CharCase = ecNormal
+                    MaxLength = 0
+                    TabOrder = 0
+                    OnKeyPress = DBEdit44KeyPress
+                  end
+                  object DBEdit45: TDBEdit
+                    Left = 155
+                    Height = 29
+                    Top = 70
+                    Width = 114
+                    DataField = 'MDV_CAPACIDADE_KG'
+                    DataSource = dsMDFE_VEICULOS
+                    Alignment = taRightJustify
+                    CharCase = ecNormal
+                    MaxLength = 0
+                    TabOrder = 1
+                    OnKeyPress = DBEdit45KeyPress
+                  end
+                  object DBEdit46: TDBEdit
+                    Left = 154
+                    Height = 29
+                    Top = 122
+                    Width = 114
+                    DataField = 'MDV_CAPACIDADE_M3'
+                    DataSource = dsMDFE_VEICULOS
+                    Alignment = taRightJustify
+                    CharCase = ecNormal
+                    MaxLength = 0
+                    TabOrder = 2
+                  end
+                  object SpeedButton2: TSpeedButton
+                    Left = 0
+                    Height = 29
+                    Top = 17
+                    Width = 33
+                    Images = DM.ImageDM
+                    ImageIndex = 10
+                    ImageWidth = 25
+                    OnClick = SpeedButton2Click
+                  end
+                  object DBLookupComboBox6: TDBLookupComboBox
+                    Left = 2
+                    Height = 31
+                    Top = 70
+                    Width = 150
+                    DataField = 'MDV_RODADO'
+                    DataSource = dsMDFE_VEICULOS
+                    KeyField = 'TIPO'
+                    ListField = 'DESCRICAO'
+                    ListFieldIndex = 0
+                    ListSource = dsTipoRodado
+                    LookupCache = False
+                    Style = csDropDownList
+                    TabOrder = 3
+                  end
+                  object DBLookupComboBox7: TDBLookupComboBox
+                    Left = 2
+                    Height = 31
+                    Top = 122
+                    Width = 150
+                    DataField = 'MDV_CARROCERIA'
+                    DataSource = dsMDFE_VEICULOS
+                    KeyField = 'TIPO'
+                    ListField = 'DESCRICAO'
+                    ListFieldIndex = 0
+                    ListSource = dsTipoCarroceria
+                    LookupCache = False
+                    Style = csDropDownList
+                    TabOrder = 4
+                  end
+                  object edtPlaca: TEdit
+                    Left = 33
+                    Height = 29
+                    Top = 17
+                    Width = 80
+                    TabOrder = 5
+                  end
+                  object edtUf: TEdit
+                    Left = 114
+                    Height = 29
+                    Top = 17
+                    Width = 38
+                    CharCase = ecUppercase
+                    TabOrder = 6
+                  end
+                end
+                object GroupBox15: TGroupBox
+                  Left = 277
+                  Height = 177
+                  Top = 0
+                  Width = 465
+                  Align = alClient
+                  Caption = '-'
+                  ClientHeight = 156
+                  ClientWidth = 461
+                  Color = clWhite
+                  ParentColor = False
+                  TabOrder = 1
+                  object Panel22: TPanel
+                    Left = 0
+                    Height = 1
+                    Top = -17
+                    Width = 1
+                    AutoSize = True
+                    TabOrder = 0
+                  end
+                  object Label85: TLabel
+                    Left = 145
+                    Height = 17
+                    Top = 12
+                    Width = 28
+                    Caption = 'Tipo'
+                    Font.Height = -13
+                    Font.Name = 'Sans'
+                    ParentColor = False
+                    ParentFont = False
+                  end
+                  object Label89: TLabel
+                    Left = 312
+                    Height = 17
+                    Top = 12
+                    Width = 44
+                    Caption = 'RNTRC'
+                    Font.Height = -13
+                    Font.Name = 'Sans'
+                    ParentColor = False
+                    ParentFont = False
+                  end
+                  object Label90: TLabel
+                    Left = 408
+                    Height = 17
+                    Top = 12
+                    Width = 17
+                    Caption = 'UF'
+                    Font.Height = -13
+                    Font.Name = 'Sans'
+                    ParentColor = False
+                    ParentFont = False
+                  end
+                  object Label91: TLabel
+                    Left = 312
+                    Height = 19
+                    Top = 61
+                    Width = 90
+                    Caption = 'Insc. Estadual'
+                    ParentColor = False
+                  end
+                  object Label92: TLabel
+                    Left = 8
+                    Height = 17
+                    Top = 108
+                    Width = 39
+                    Caption = 'Nome'
+                    Font.Height = -13
+                    Font.Name = 'Sans'
+                    ParentColor = False
+                    ParentFont = False
+                  end
+                  object Label93: TLabel
+                    Left = 8
+                    Height = 19
+                    Top = 10
+                    Width = 131
+                    Caption = 'Cód. Interno Veículo'
+                    ParentColor = False
+                  end
+                  object Label94: TLabel
+                    Left = 8
+                    Height = 17
+                    Top = 61
+                    Width = 59
+                    Caption = 'CNPJ/CPF'
+                    Font.Height = -13
+                    Font.Name = 'Sans'
+                    ParentColor = False
+                    ParentFont = False
+                  end
+                  object DBEdit42: TDBEdit
+                    Left = 8
+                    Height = 29
+                    Top = 29
+                    Width = 131
+                    DataField = 'MDV_COD_INTERNO'
+                    DataSource = dsMDFE_VEICULOS
+                    CharCase = ecNormal
+                    MaxLength = 0
+                    TabOrder = 1
+                    OnKeyPress = DBEdit42KeyPress
+                  end
+                  object DBEdit43: TDBEdit
+                    Left = 8
+                    Height = 29
+                    Top = 80
+                    Width = 304
+                    DataField = 'MDV_PROP_CNPJ_CPF'
+                    DataSource = dsMDFE_VEICULOS
+                    CharCase = ecNormal
+                    MaxLength = 0
+                    TabOrder = 2
+                    OnKeyPress = DBEdit43KeyPress
+                  end
+                  object DBEdit47: TDBEdit
+                    Left = 8
+                    Height = 29
+                    Top = 125
+                    Width = 451
+                    DataField = 'MDV_PROP_NOME'
+                    DataSource = dsMDFE_VEICULOS
+                    CharCase = ecNormal
+                    MaxLength = 0
+                    TabOrder = 3
+                    OnKeyPress = DBEdit47KeyPress
+                  end
+                  object DBEdit48: TDBEdit
+                    Left = 312
+                    Height = 29
+                    Top = 29
+                    Width = 96
+                    DataField = 'MDV_PROP_RNTRC'
+                    DataSource = dsMDFE_VEICULOS
+                    CharCase = ecNormal
+                    MaxLength = 0
+                    TabOrder = 4
+                    OnKeyPress = DBEdit48KeyPress
+                  end
+                  object DBEdit49: TDBEdit
+                    Left = 408
+                    Height = 29
+                    Top = 29
+                    Width = 32
+                    DataField = 'MDV_PROP_UF'
+                    DataSource = dsMDFE_VEICULOS
+                    CharCase = ecNormal
+                    MaxLength = 0
+                    TabOrder = 5
+                    OnKeyPress = DBEdit49KeyPress
+                  end
+                  object DBEdit50: TDBEdit
+                    Left = 312
+                    Height = 29
+                    Top = 80
+                    Width = 142
+                    DataField = 'MDV_PROP_INSC_ESTADUAL'
+                    DataSource = dsMDFE_VEICULOS
+                    CharCase = ecNormal
+                    MaxLength = 0
+                    TabOrder = 6
+                    OnKeyPress = DBEdit50KeyPress
+                  end
+                  object DBLookupComboBox8: TDBLookupComboBox
+                    Left = 144
+                    Height = 31
+                    Top = 29
+                    Width = 166
+                    DataField = 'MDV_PROP_TIPO'
+                    DataSource = dsMDFE_VEICULOS
+                    KeyField = 'TIPO'
+                    ListField = 'DESCRICAO'
+                    ListFieldIndex = 0
+                    ListSource = dsTipoProprietario
+                    LookupCache = False
+                    Style = csDropDownList
+                    TabOrder = 7
+                  end
+                  object checkProprietario: TDBCheckBox
+                    Left = 0
+                    Height = 16
+                    Top = -8
+                    Width = 270
+                    Caption = 'Proprietário Diferente do Emitente'
+                    DataField = 'MDV_PROP_DEFINIDO'
+                    DataSource = dsMDFE_VEICULOS
+                    OnClick = checkProprietarioClick
+                    TabOrder = 8
+                    ValueChecked = 'S'
+                    ValueUnchecked = 'N'
+                  end
+                end
+              end
+              object TabSheet12: TTabSheet
+                Caption = 'Reboques'
+                ClientHeight = 177
+                ClientWidth = 742
+                object GroupBox16: TGroupBox
+                  Left = 0
+                  Height = 177
+                  Top = 0
+                  Width = 758
+                  Align = alClient
+                  Caption = 'Reboque (Máx. 3) '
+                  ClientHeight = 156
+                  ClientWidth = 754
+                  Color = clWhite
+                  ParentColor = False
+                  TabOrder = 0
+                  object Panel4: TPanel
+                    Left = 0
+                    Height = 156
+                    Top = 0
+                    Width = 48
+                    Align = alLeft
+                    ClientHeight = 152
+                    ClientWidth = 44
+                    TabOrder = 0
+                    object SpeedButton8: TSpeedButton
+                      Left = 1
+                      Height = 154
+                      Top = 1
+                      Width = 46
+                      Align = alClient
+                      Images = DM.ImageDM
+                      ImageIndex = 74
+                      ImageWidth = 36
+                      OnClick = SpeedButton8Click
+                    end
+                  end
+                  object DbGreboques: TDBGrid
+                    Left = 48
+                    Height = 156
+                    Top = 0
+                    Width = 706
+                    Align = alClient
+                    Color = clWindow
+                    Columns = <>
+                    DataSource = dsReboques
+                    Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgAutoSizeColumns]
+                    ReadOnly = True
+                    TabOrder = 1
+                  end
+                end
+              end
+            end
+          end
+          object Panel5: TPanel
+            Left = 0
+            Height = 50
+            Top = 697
+            Width = 1403
+            Align = alBottom
+            ClientHeight = 50
+            ClientWidth = 1403
+            Color = clWhite
+            ParentColor = False
+            TabOrder = 1
+            object Panel6: TPanel
+              Left = 1146
+              Height = 48
+              Top = 1
+              Width = 256
+              Align = alRight
+              ClientHeight = 48
+              ClientWidth = 256
+              TabOrder = 0
+              object btnGerarMDFe: TButton
+                Left = 24
+                Height = 32
+                Top = 8
+                Width = 104
+                Caption = 'Gerar MDF-e'
+                OnClick = btnGerarMDFeClick
+                TabOrder = 0
+              end
+              object btnSairdaPagina: TButton
+                Left = 134
+                Height = 32
+                Top = 8
+                Width = 112
+                Caption = 'Sair da Pagina'
+                OnClick = btnSairdaPaginaClick
+                TabOrder = 1
+              end
+            end
+            object Label46: TLabel
+              Left = 560
+              Height = 19
+              Top = 16
+              Width = 139
+              Caption = 'Assistente de MDF-e'
+              ParentColor = False
+            end
+          end
+          object Panel7: TPanel
+            Left = 0
+            Height = 489
+            Top = 208
+            Width = 1403
+            Align = alClient
+            ClientHeight = 489
+            ClientWidth = 1403
+            TabOrder = 2
+            object PageControl6: TPageControl
+              Left = 1008
+              Height = 487
+              Top = 1
+              Width = 394
+              ActivePage = TabSheet13
+              Align = alRight
+              TabIndex = 0
+              TabOrder = 0
+              object TabSheet13: TTabSheet
+                Caption = 'Condutores'
+                ClientHeight = 458
+                ClientWidth = 390
+                object GroupBox17: TGroupBox
+                  Left = 0
+                  Height = 458
+                  Top = 0
+                  Width = 390
+                  Align = alClient
+                  Caption = '(Máx. 10)'
+                  ClientHeight = 437
+                  ClientWidth = 386
+                  Color = clWhite
+                  ParentColor = False
+                  TabOrder = 0
+                  object Panel8: TPanel
+                    Left = 0
+                    Height = 58
+                    Top = 0
+                    Width = 386
+                    Align = alTop
+                    ClientHeight = 58
+                    ClientWidth = 386
+                    TabOrder = 0
+                    object Label47: TLabel
+                      Left = 6
+                      Height = 19
+                      Top = 4
+                      Width = 28
+                      Caption = 'CPF'
+                      ParentColor = False
+                    end
+                    object Label48: TLabel
+                      Left = 110
+                      Height = 19
+                      Top = 4
+                      Width = 40
+                      Caption = 'Nome'
+                      ParentColor = False
+                    end
+                    object SpeedButton9: TSpeedButton
+                      Left = 320
+                      Height = 29
+                      Top = 24
+                      Width = 31
+                      Images = DM.ImageDM
+                      ImageIndex = 74
+                      ImageWidth = 25
+                      OnClick = SpeedButton9Click
+                    end
+                    object dbeCPF: TEdit
+                      Left = 6
+                      Height = 29
+                      Top = 24
+                      Width = 102
+                      OnExit = dbeCPFExit
+                      OnKeyPress = dbeCPFKeyPress
+                      TabOrder = 0
+                    end
+                    object dbeNome: TEdit
+                      Left = 110
+                      Height = 29
+                      Top = 24
+                      Width = 208
+                      OnKeyPress = dbeNomeKeyPress
+                      TabOrder = 1
+                    end
+                    object SpeedButton10: TSpeedButton
+                      Left = 352
+                      Height = 29
+                      Top = 24
+                      Width = 30
+                      Images = DM.ImageDM
+                      ImageIndex = 75
+                      ImageWidth = 25
+                      OnClick = SpeedButton10Click
+                    end
+                  end
+                  object DbgCondutores: TDBGrid
+                    Left = 0
+                    Height = 379
+                    Top = 58
+                    Width = 386
+                    Align = alClient
+                    Color = clWindow
+                    Columns = <>
+                    DataSource = dsMDFE_CONDUTORES
+                    TabOrder = 1
+                  end
+                end
+              end
+              object TabSheet14: TTabSheet
+                Caption = 'Percursos'
+                ClientHeight = 458
+                ClientWidth = 390
+                object GroupBox18: TGroupBox
+                  Left = 0
+                  Height = 458
+                  Top = 0
+                  Width = 390
+                  Align = alClient
+                  Caption = 'Máx. 25'
+                  ClientHeight = 437
+                  ClientWidth = 386
+                  Color = clWhite
+                  ParentColor = False
+                  TabOrder = 0
+                  object Panel9: TPanel
+                    Left = 0
+                    Height = 44
+                    Top = 0
+                    Width = 386
+                    Align = alTop
+                    ClientHeight = 40
+                    ClientWidth = 382
+                    TabOrder = 0
+                    object SpeedButton3: TSpeedButton
+                      Left = 272
+                      Height = 27
+                      Top = 8
+                      Width = 47
+                      Images = DM.ImageDM
+                      ImageIndex = 74
+                      ImageWidth = 25
+                      OnClick = SpeedButton3Click
+                    end
+                    object SpeedButton11: TSpeedButton
+                      Left = 321
+                      Height = 27
+                      Top = 8
+                      Width = 44
+                      Images = DM.ImageDM
+                      ImageIndex = 75
+                      ImageWidth = 25
+                      OnClick = SpeedButton11Click
+                    end
+                    object cbEstado: TComboBox
+                      Left = 8
+                      Height = 27
+                      Top = 8
+                      Width = 252
+                      ItemHeight = 0
+                      Items.Strings = (
+                        'AC'
+                        'AL'
+                        'AP'
+                        'AM'
+                        'BA'
+                        'CE'
+                        'DF'
+                        'ES'
+                        'GO'
+                        'MA'
+                        'MT'
+                        'MS'
+                        'MG'
+                        'PA'
+                        'PB'
+                        'PR'
+                        'PE'
+                        'PI'
+                        'RJ'
+                        'RN'
+                        'RS'
+                        'RO'
+                        'RR'
+                        'SC'
+                        'SP'
+                        'SE'
+                        'TO'
+                      )
+                      OnKeyPress = cbEstadoKeyPress
+                      Style = csDropDownList
+                      TabOrder = 0
+                    end
+                  end
+                  object DBGrid9: TDBGrid
+                    Left = 0
+                    Height = 393
+                    Top = 44
+                    Width = 386
+                    Align = alClient
+                    Color = clWindow
+                    Columns = <>
+                    DataSource = dsMDFE_PERCURSO
+                    TabOrder = 1
+                  end
+                end
+              end
+            end
+            object GroupBox19: TGroupBox
+              Left = 1
+              Height = 487
+              Top = 1
+              Width = 1007
+              Align = alClient
+              Caption = 'Documentos (Máx. 100)'
+              ClientHeight = 466
+              ClientWidth = 1003
+              TabOrder = 1
+              object Panel10: TPanel
+                Left = 0
+                Height = 112
+                Top = 0
+                Width = 1003
+                Align = alTop
+                BevelColor = clWhite
+                ClientHeight = 112
+                ClientWidth = 1003
+                Color = clWhite
+                ParentColor = False
+                TabOrder = 0
+                object Label49: TLabel
+                  Left = 4
+                  Height = 19
+                  Top = 3
+                  Width = 253
+                  Caption = 'Chave do Documento / Seg. Cod. Barra'
+                  ParentColor = False
+                end
+                object SpeedButton5: TSpeedButton
+                  Left = 4
+                  Height = 29
+                  Top = 22
+                  Width = 32
+                  Images = DM.ImageDM
+                  ImageIndex = 10
+                  ImageWidth = 25
+                  OnClick = SpeedButton5Click
+                end
+                object Label50: TLabel
+                  Left = 4
+                  Height = 19
+                  Top = 56
+                  Width = 145
+                  Caption = 'Cidade Carregamento'
+                  ParentColor = False
+                end
+                object Label51: TLabel
+                  Left = 528
+                  Height = 19
+                  Top = 3
+                  Width = 114
+                  Caption = 'Valor Mercadoria'
+                  ParentColor = False
+                end
+                object Label52: TLabel
+                  Left = 668
+                  Height = 19
+                  Top = 3
+                  Width = 111
+                  Caption = 'Peso Mercadoria'
+                  ParentColor = False
+                end
+                object SpeedButton6: TSpeedButton
+                  Left = 4
+                  Height = 29
+                  Top = 77
+                  Width = 32
+                  Images = DM.ImageDM
+                  ImageIndex = 10
+                  ImageWidth = 25
+                  OnClick = SpeedButton6Click
+                end
+                object SpeedButton7: TSpeedButton
+                  Left = 512
+                  Height = 29
+                  Top = 77
+                  Width = 32
+                  Images = DM.ImageDM
+                  ImageIndex = 10
+                  ImageWidth = 25
+                  OnClick = SpeedButton7Click
+                end
+                object Label53: TLabel
+                  Left = 512
+                  Height = 19
+                  Top = 56
+                  Width = 168
+                  Caption = 'Cidade Descarregamento'
+                  ParentColor = False
+                end
+                object btnAddDocs: TSpeedButton
+                  Left = 992
+                  Height = 40
+                  Top = 9
+                  Width = 112
+                  Caption = 'Adicionar'
+                  Images = DM.ImageDM
+                  ImageIndex = 74
+                  ImageWidth = 30
+                  OnClick = btnAddDocsClick
+                end
+                object edtCodIBGECarregamento: TEdit
+                  Left = 40
+                  Height = 29
+                  Top = 77
+                  Width = 101
+                  Color = 9096620
+                  ReadOnly = True
+                  TabOrder = 0
+                end
+                object edtCidadeCarregamento: TEdit
+                  Left = 142
+                  Height = 29
+                  Top = 77
+                  Width = 294
+                  Color = 9096620
+                  ReadOnly = True
+                  TabOrder = 1
+                end
+                object edtUFCarregamento: TEdit
+                  Left = 437
+                  Height = 29
+                  Top = 77
+                  Width = 44
+                  Color = 9096620
+                  ReadOnly = True
+                  TabOrder = 2
+                end
+                object edtCodIBGEDescarregamento: TEdit
+                  Left = 544
+                  Height = 29
+                  Top = 77
+                  Width = 101
+                  Color = 9096620
+                  ReadOnly = True
+                  TabOrder = 3
+                end
+                object edtCidadeDescarregamento: TEdit
+                  Left = 645
+                  Height = 29
+                  Top = 77
+                  Width = 290
+                  Color = 9096620
+                  ReadOnly = True
+                  TabOrder = 4
+                end
+                object edtUFDescarregamento: TEdit
+                  Left = 937
+                  Height = 29
+                  Top = 77
+                  Width = 47
+                  Color = 9096620
+                  ReadOnly = True
+                  TabOrder = 5
+                end
+                object edtchave: TEdit
+                  Left = 40
+                  Height = 29
+                  Top = 22
+                  Width = 480
+                  OnKeyPress = edtchaveKeyPress
+                  TabOrder = 6
+                end
+                object SpeedButton4: TSpeedButton
+                  Left = 992
+                  Height = 40
+                  Top = 56
+                  Width = 112
+                  Caption = 'Remover'
+                  Images = DM.ImageDM
+                  ImageIndex = 75
+                  ImageWidth = 30
+                  OnClick = SpeedButton4Click
+                end
+                object edtValor: TEdit
+                  Left = 528
+                  Height = 29
+                  Top = 22
+                  Width = 136
+                  OnKeyPress = edtValorKeyPress
+                  TabOrder = 7
+                end
+                object edtPeso: TEdit
+                  Left = 668
+                  Height = 29
+                  Top = 22
+                  Width = 136
+                  TabOrder = 8
+                end
+              end
+              object GridDocumentos: TDBGrid
+                Left = 0
+                Height = 354
+                Top = 112
+                Width = 1003
+                Align = alClient
+                Color = clWindow
+                Columns = <>
+                DataSource = dsGridDocumentos
+                TabOrder = 1
+                OnKeyDown = GridDocumentosKeyDown
+                OnKeyUp = GridDocumentosKeyUp
+              end
+            end
+          end
+        end
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'Consulta'
+      ClientHeight = 776
+      ClientWidth = 1407
+      object Panel11: TPanel
+        Left = 0
+        Height = 67
+        Top = 0
+        Width = 1518
+        Align = alTop
+        ClientHeight = 67
+        ClientWidth = 1518
+        Color = clWhite
+        ParentColor = False
+        TabOrder = 0
+        object Label54: TLabel
+          Left = 8
+          Height = 19
+          Top = 4
+          Width = 150
+          Caption = 'Pesquisar  por Número'
+          ParentColor = False
+        end
+        object Button4: TButton
+          Left = 472
+          Height = 29
+          Top = 24
+          Width = 88
+          Caption = 'Busca'
+          OnClick = Button4Click
+          TabOrder = 0
+        end
+        object edtBusca: TEdit
+          Left = 8
+          Height = 29
+          Top = 24
+          Width = 455
+          TabOrder = 1
+        end
+      end
+      object DBGrid11: TDBGrid
+        Left = 0
+        Height = 709
+        Top = 67
+        Width = 1518
+        Align = alClient
+        Color = clWindow
+        Columns = <>
+        DataSource = dsBusca
+        TabOrder = 1
+      end
+    end
+  end
+  object qryMDFE: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'EMITENTE_LETRA'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 40
+      end    
+      item
+        Name = 'MODALIDADE_LETRA'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 11
+      end    
+      item
+        Name = 'TRANSPORTADOR_LETRA'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 3
+      end    
+      item
+        Name = 'EMISSAO_LETRA'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 12
+      end    
+      item
+        Name = 'MDFE_ID'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'NF_EMPRESA'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'DATA_EMISSAO'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'SERIE_DOC'
+        DataType = ftString
+        Precision = -1
+        Size = 3
+      end    
+      item
+        Name = 'FORMA_EMISSAO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'TIPO_EMITENTE'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'MODALIDADE'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'NUMERO_DOC'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'HORA_EMISSAO'
+        DataType = ftTime
+        Precision = -1
+      end    
+      item
+        Name = 'DATA_VIAGEM'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'HORA_VIAGEM'
+        DataType = ftTime
+        Precision = -1
+      end    
+      item
+        Name = 'MODELO_DOC'
+        DataType = ftString
+        Precision = -1
+        Size = 2
+      end    
+      item
+        Name = 'STATUS_MDFE'
+        DataType = ftString
+        Precision = -1
+        Size = 1
+      end    
+      item
+        Name = 'OBS'
+        DataType = ftMemo
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = 'UF_CARREGAMENTO'
+        DataType = ftString
+        Precision = -1
+        Size = 2
+      end    
+      item
+        Name = 'UF_DESCARREGAMENTO'
+        DataType = ftString
+        Precision = -1
+        Size = 2
+      end    
+      item
+        Name = 'TIPO_TRANSPORTADOR'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'TOT_CTE'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'TOT_NFE'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'TOT_NF1_NF1A'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'TOT_MERCADORIAS'
+        DataType = ftBCD
+        Precision = 18
+        Size = 2
+      end    
+      item
+        Name = 'TOT_PESO'
+        DataType = ftFMTBcd
+        Precision = 18
+        Size = 5
+      end    
+      item
+        Name = 'UND_MEDIDA'
+        DataType = ftInteger
+        Precision = -1
+      end>
+    AfterOpen = qryMDFEAfterOpen
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      'SELECT'
+      ''
+      'CASE'
+      'WHEN m.TIPO_EMITENTE = ''1'' THEN ''Prestador de servico de Transporte'''
+      'WHEN m.TIPO_EMITENTE = ''2'' THEN ''Não prestador de serviço de Transporte'''
+      'END AS EMITENTE_LETRA,'
+      ''
+      'CASE'
+      'WHEN m.MODALIDADE = ''1'' THEN ''Rodoviário'''
+      'WHEN m.MODALIDADE = ''2'' THEN ''Aquário'''
+      'END AS MODALIDADE_letra,'
+      ''
+      'CASE'
+      'WHEN m.TIPO_TRANSPORTADOR = ''1'' THEN ''ETC'''
+      'WHEN m.TIPO_TRANSPORTADOR = ''2'' THEN ''TAC'''
+      'WHEN m.TIPO_TRANSPORTADOR = ''3'' THEN ''CTC'''
+      'END AS TRANSPORTADOR_LETRA,'
+      ''
+      'CASE'
+      'WHEN m.FORMA_EMISSAO = ''1'' THEN ''Normal'''
+      'WHEN m.FORMA_EMISSAO = ''2'' THEN ''Contigência'''
+      'END AS EMISSAO_LETRA,'
+      ''
+      'MDFE_ID, NF_EMPRESA, DATA_EMISSAO, SERIE_DOC, FORMA_EMISSAO, TIPO_EMITENTE,'
+      'MODALIDADE, NUMERO_DOC, HORA_EMISSAO, DATA_VIAGEM, HORA_VIAGEM,'
+      'MODELO_DOC, STATUS_MDFE, OBS,'
+      ''
+      'UF_CARREGAMENTO, UF_DESCARREGAMENTO, TIPO_TRANSPORTADOR,'
+      ''
+      'TOT_CTE, TOT_NFE, TOT_NF1_NF1A, TOT_MERCADORIAS, TOT_PESO, UND_MEDIDA'
+      ''
+      'FROM MDFE m'
+      'where MDFE_ID = :MDFE_ID'
+    )
+    InsertSQL.Strings = (
+      'insert into MDFE (MDFE_ID, NF_EMPRESA, DATA_EMISSAO, SERIE_DOC, FORMA_EMISSAO, TIPO_EMITENTE, MODALIDADE, NUMERO_DOC, HORA_EMISSAO, DATA_VIAGEM, HORA_VIAGEM, MODELO_DOC, STATUS_MDFE, OBS, UF_CARREGAMENTO, UF_DESCARREGAMENTO, TIPO_TRANSPORTADOR, TOT_CTE, TOT_NFE, TOT_NF1_NF1A, TOT_MERCADORIAS, TOT_PESO, UND_MEDIDA)'
+      'values (:MDFE_ID, :NF_EMPRESA, :DATA_EMISSAO, :SERIE_DOC, :FORMA_EMISSAO, :TIPO_EMITENTE, :MODALIDADE, :NUMERO_DOC, :HORA_EMISSAO, :DATA_VIAGEM, :HORA_VIAGEM, :MODELO_DOC, :STATUS_MDFE, :OBS, :UF_CARREGAMENTO, :UF_DESCARREGAMENTO, :TIPO_TRANSPORTADOR, :TOT_CTE, :TOT_NFE, :TOT_NF1_NF1A, :TOT_MERCADORIAS, :TOT_PESO, :UND_MEDIDA)'
+    )
+    UpdateSQL.Strings = (
+      '     update MDFE SET'
+      ' NF_EMPRESA = :NF_EMPRESA,'
+      ' DATA_EMISSAO = :DATA_EMISSAO,'
+      ' SERIE_DOC = :SERIE_DOC,'
+      ' FORMA_EMISSAO = :FORMA_EMISSAO,'
+      ' TIPO_EMITENTE = :TIPO_EMITENTE,'
+      ' MODALIDADE = :MODALIDADE,'
+      ' NUMERO_DOC = :NUMERO_DOC,'
+      ' HORA_EMISSAO = :HORA_EMISSAO,'
+      ' DATA_VIAGEM = :DATA_VIAGEM,'
+      ' HORA_VIAGEM = :HORA_VIAGEM,'
+      ' MODELO_DOC = :MODELO_DOC,'
+      ' STATUS_MDFE = :STATUS_MDFE,'
+      ' OBS = :OBS,'
+      ' UF_CARREGAMENTO = :UF_CARREGAMENTO,'
+      ' UF_DESCARREGAMENTO = :UF_DESCARREGAMENTO,'
+      ' TIPO_TRANSPORTADOR = :TIPO_TRANSPORTADOR,'
+      ' TOT_CTE = :TOT_CTE,'
+      ' TOT_NFE = :TOT_NFE,'
+      ' TOT_NF1_NF1A = :TOT_NF1_NF1A,'
+      ' TOT_MERCADORIAS = :TOT_MERCADORIAS,'
+      ' TOT_PESO = :TOT_PESO,'
+      ' UND_MEDIDA = :UND_MEDIDA'
+      'where'
+      ' MDFE_ID = :MDFE_ID'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'MDFE_ID'
+        ParamType = ptInput
+      end>
+    left = 39
+    top = 523
+    object qryMDFEEMITENTE_LETRA: TStringField
+      FieldKind = fkData
+      FieldName = 'EMITENTE_LETRA'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qryMDFEMODALIDADE_LETRA: TStringField
+      FieldKind = fkData
+      FieldName = 'MODALIDADE_LETRA'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 11
+    end
+    object qryMDFETRANSPORTADOR_LETRA: TStringField
+      FieldKind = fkData
+      FieldName = 'TRANSPORTADOR_LETRA'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3
+    end
+    object qryMDFEEMISSAO_LETRA: TStringField
+      FieldKind = fkData
+      FieldName = 'EMISSAO_LETRA'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 12
+    end
+    object qryMDFEMDFE_ID: TLongintField
+      FieldKind = fkData
+      FieldName = 'MDFE_ID'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryMDFENF_EMPRESA: TLongintField
+      FieldKind = fkData
+      FieldName = 'NF_EMPRESA'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryMDFEDATA_EMISSAO: TDateField
+      FieldKind = fkData
+      FieldName = 'DATA_EMISSAO'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryMDFESERIE_DOC: TStringField
+      FieldKind = fkData
+      FieldName = 'SERIE_DOC'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3
+    end
+    object qryMDFEFORMA_EMISSAO: TLongintField
+      FieldKind = fkData
+      FieldName = 'FORMA_EMISSAO'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryMDFETIPO_EMITENTE: TLongintField
+      FieldKind = fkData
+      FieldName = 'TIPO_EMITENTE'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryMDFEMODALIDADE: TLongintField
+      FieldKind = fkData
+      FieldName = 'MODALIDADE'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryMDFENUMERO_DOC: TLongintField
+      FieldKind = fkData
+      FieldName = 'NUMERO_DOC'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryMDFEHORA_EMISSAO: TTimeField
+      FieldKind = fkData
+      FieldName = 'HORA_EMISSAO'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryMDFEDATA_VIAGEM: TDateField
+      FieldKind = fkData
+      FieldName = 'DATA_VIAGEM'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryMDFEHORA_VIAGEM: TTimeField
+      FieldKind = fkData
+      FieldName = 'HORA_VIAGEM'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryMDFEMODELO_DOC: TStringField
+      FieldKind = fkData
+      FieldName = 'MODELO_DOC'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+    object qryMDFESTATUS_MDFE: TStringField
+      FieldKind = fkData
+      FieldName = 'STATUS_MDFE'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+    object qryMDFEOBS: TMemoField
+      FieldKind = fkData
+      FieldName = 'OBS'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Size = 8
+      Transliterate = False
+    end
+    object qryMDFEUF_CARREGAMENTO: TStringField
+      FieldKind = fkData
+      FieldName = 'UF_CARREGAMENTO'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+    object qryMDFEUF_DESCARREGAMENTO: TStringField
+      FieldKind = fkData
+      FieldName = 'UF_DESCARREGAMENTO'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+    object qryMDFETIPO_TRANSPORTADOR: TLongintField
+      FieldKind = fkData
+      FieldName = 'TIPO_TRANSPORTADOR'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryMDFETOT_CTE: TLongintField
+      FieldKind = fkData
+      FieldName = 'TOT_CTE'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryMDFETOT_NFE: TLongintField
+      FieldKind = fkData
+      FieldName = 'TOT_NFE'
+      Index = 22
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryMDFETOT_NF1_NF1A: TLongintField
+      FieldKind = fkData
+      FieldName = 'TOT_NF1_NF1A'
+      Index = 23
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryMDFETOT_MERCADORIAS: TBCDField
+      FieldKind = fkData
+      FieldName = 'TOT_MERCADORIAS'
+      Index = 24
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 18
+      Currency = False
+      MaxValue = 0
+      MinValue = 0
+      Size = 2
+    end
+    object qryMDFETOT_PESO: TFMTBCDField
+      FieldKind = fkData
+      FieldName = 'TOT_PESO'
+      Index = 25
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = False
+      MaxValue = '0'
+      MinValue = '0'
+      Size = 5
+    end
+    object qryMDFEUND_MEDIDA: TLongintField
+      FieldKind = fkData
+      FieldName = 'UND_MEDIDA'
+      Index = 26
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object dsMDFE: TDataSource
+    DataSet = qryMDFE
+    left = 39
+    top = 576
+  end
+  object qryNF_SERIE: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'NF_ULT_NUMERO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'NF_EMPRESA'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'NF_SERIE'
+        DataType = ftString
+        Precision = -1
+        Size = 3
+      end>
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      'SELECT'
+      'ns.NF_ULT_NUMERO,'
+      'ns.NF_EMPRESA,'
+      'ns.NF_SERIE'
+      'FROM NF_SERIE ns'
+      'WHERE ns.NF_EMPRESA = :NF_EMPRESA'
+      'and ns.NF_SERIE = :NF_SERIE'
+    )
+    InsertSQL.Strings = (
+      ''
+    )
+    UpdateSQL.Strings = (
+      'update NF_SERIE set'
+      ' NF_ULT_NUMERO = :NF_ULT_NUMERO'
+      ' where( NF_EMPRESA = :NF_EMPRESA)'
+      ' and (NF_SERIE = :NF_SERIE)'
+      ''
+      ''
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'NF_EMPRESA'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'NF_SERIE'
+        ParamType = ptInput
+      end>
+    left = 127
+    top = 523
+    object qryNF_SERIENF_ULT_NUMERO: TLongintField
+      FieldKind = fkData
+      FieldName = 'NF_ULT_NUMERO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryNF_SERIENF_EMPRESA: TLongintField
+      FieldKind = fkData
+      FieldName = 'NF_EMPRESA'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryNF_SERIENF_SERIE: TStringField
+      FieldKind = fkData
+      FieldName = 'NF_SERIE'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3
+    end
+  end
+  object dsNF_SERIE: TDataSource
+    DataSet = qryNF_SERIE
+    left = 127
+    top = 576
+  end
+  object qryMDFE_LOCALCARGA: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'MDC_CIDADE'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'MDC_CIDADE_IBGE'
+        DataType = ftString
+        Precision = -1
+        Size = 7
+      end    
+      item
+        Name = 'MDC_ID'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'MDC_TIPO'
+        DataType = ftString
+        Precision = -1
+        Size = 1
+      end    
+      item
+        Name = 'MDC_UF'
+        DataType = ftString
+        Precision = -1
+        Size = 2
+      end    
+      item
+        Name = 'MDFE_ID'
+        DataType = ftInteger
+        Precision = -1
+      end>
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      'SELECT'
+      'ml.MDC_CIDADE,'
+      'ml.MDC_CIDADE_IBGE,'
+      'ml.MDC_ID,'
+      'ml.MDC_TIPO,'
+      'ml.MDC_UF,'
+      'ml.MDFE_ID'
+      'FROM MDFE_LOCALCARGA ml'
+      'WHERE ml.MDFE_ID = :MDFE_ID'
+    )
+    InsertSQL.Strings = (
+      'insert into MDFE_LOCALCARGA'
+      '  (MDFE_ID, MDC_ID, MDC_TIPO, MDC_CIDADE_IBGE, MDC_CIDADE, MDC_UF)'
+      'values'
+      '  (:MDFE_ID, :MDC_ID, :MDC_TIPO, :MDC_CIDADE_IBGE, :MDC_CIDADE, :MDC_UF)'
+    )
+    UpdateSQL.Strings = (
+      'UPDATE MDFE_LOCALCARGA set'
+      ' MDC_TIPO = :MDC_TIPO,'
+      ' MDC_CIDADE_IBGE = :MDC_CIDADE_IBGE,'
+      ' MDC_CIDADE = :MDC_CIDADE,'
+      ' MDC_UF = :MDC_UF'
+      ' where'
+      ' MDFE_ID = :MDFE_ID'
+      ' and MDC_ID = :MDC_ID'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'MDFE_ID'
+        ParamType = ptInput
+      end>
+    left = 263
+    top = 523
+    object qryMDFE_LOCALCARGAMDC_CIDADE: TStringField
+      FieldKind = fkData
+      FieldName = 'MDC_CIDADE'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object qryMDFE_LOCALCARGAMDC_CIDADE_IBGE: TStringField
+      FieldKind = fkData
+      FieldName = 'MDC_CIDADE_IBGE'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 7
+    end
+    object qryMDFE_LOCALCARGAMDC_ID: TLongintField
+      FieldKind = fkData
+      FieldName = 'MDC_ID'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryMDFE_LOCALCARGAMDC_TIPO: TStringField
+      FieldKind = fkData
+      FieldName = 'MDC_TIPO'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+    object qryMDFE_LOCALCARGAMDC_UF: TStringField
+      FieldKind = fkData
+      FieldName = 'MDC_UF'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+    object qryMDFE_LOCALCARGAMDFE_ID: TLongintField
+      FieldKind = fkData
+      FieldName = 'MDFE_ID'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object dsMDFE_LOCALCARGA: TDataSource
+    DataSet = qryMDFE_LOCALCARGA
+    left = 263
+    top = 576
+  end
+  object dsMDFE_LOCALCARGA_DOCS: TDataSource
+    DataSet = qryMDFE_LOCALCARGA_DOCS
+    left = 467
+    top = 576
+  end
+  object qryMDFE_LOCALCARGA_DOCS: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'MDC_ID'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'MDD_CHAVE'
+        DataType = ftString
+        Precision = -1
+        Size = 44
+      end    
+      item
+        Name = 'MDD_MODELO'
+        DataType = ftString
+        Precision = -1
+        Size = 2
+      end    
+      item
+        Name = 'MDD_PESO'
+        DataType = ftFMTBcd
+        Precision = 18
+        Size = 5
+      end    
+      item
+        Name = 'MDD_SEG_COD_BARRA'
+        DataType = ftString
+        Precision = -1
+        Size = 36
+      end    
+      item
+        Name = 'MDD_VALOR'
+        DataType = ftBCD
+        Precision = 18
+        Size = 2
+      end    
+      item
+        Name = 'MDFE_ID'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'ID_MD5'
+        DataType = ftString
+        Precision = -1
+        Size = 32
+      end>
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      'SELECT'
+      'mld.MDC_ID,'
+      'mld.MDD_CHAVE,'
+      'mld.MDD_MODELO,'
+      'mld.MDD_PESO,'
+      'mld.MDD_SEG_COD_BARRA,'
+      'mld.MDD_VALOR,'
+      'mld.MDFE_ID,'
+      'mld.ID_MD5'
+      ''
+      'FROM MDFE_LOCALCARGA_DOCS mld'
+      'WHERE mld.MDFE_ID = :MDFE_ID'
+    )
+    InsertSQL.Strings = (
+      'insert into MDFE_LOCALCARGA_DOCS'
+      '  (MDFE_ID, MDC_ID, MDD_CHAVE, MDD_MODELO, MDD_VALOR, MDD_PESO, MDD_SEG_COD_BARRA, ID_MD5)'
+      '  values'
+      '  (:MDFE_ID, :MDC_ID, :MDD_CHAVE, :MDD_MODELO, :MDD_VALOR, :MDD_PESO, :MDD_SEG_COD_BARRA, :ID_MD5)'
+    )
+    UpdateSQL.Strings = (
+      'UPDATE MDFE_LOCALCARGA_DOCS set'
+      '  MDC_ID = :MDC_ID,'
+      '  MDD_CHAVE = :MDD_CHAVE,'
+      '  MDD_MODELO = :MDD_MODELO,'
+      '  MDD_VALOR = :MDD_VALOR,'
+      '  MDD_PESO = :MDD_PESO,'
+      '  MDD_SEG_COD_BARRA = :MDD_SEG_COD_BARRA,'
+      '  ID_MD5 = :ID_MD5'
+      'where'
+      'MDFE_ID = :MDFE_ID'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'MDFE_ID'
+        ParamType = ptInput
+      end>
+    left = 467
+    top = 523
+    object qryMDFE_LOCALCARGA_DOCSMDC_ID: TLongintField
+      FieldKind = fkData
+      FieldName = 'MDC_ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryMDFE_LOCALCARGA_DOCSMDD_CHAVE: TStringField
+      FieldKind = fkData
+      FieldName = 'MDD_CHAVE'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 44
+    end
+    object qryMDFE_LOCALCARGA_DOCSMDD_MODELO: TStringField
+      FieldKind = fkData
+      FieldName = 'MDD_MODELO'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+    object qryMDFE_LOCALCARGA_DOCSMDD_PESO: TFMTBCDField
+      FieldKind = fkData
+      FieldName = 'MDD_PESO'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = False
+      MaxValue = '0'
+      MinValue = '0'
+      Size = 5
+    end
+    object qryMDFE_LOCALCARGA_DOCSMDD_SEG_COD_BARRA: TStringField
+      FieldKind = fkData
+      FieldName = 'MDD_SEG_COD_BARRA'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 36
+    end
+    object qryMDFE_LOCALCARGA_DOCSMDD_VALOR: TBCDField
+      FieldKind = fkData
+      FieldName = 'MDD_VALOR'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 18
+      Currency = False
+      MaxValue = 0
+      MinValue = 0
+      Size = 2
+    end
+    object qryMDFE_LOCALCARGA_DOCSMDFE_ID: TLongintField
+      FieldKind = fkData
+      FieldName = 'MDFE_ID'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryMDFE_LOCALCARGA_DOCSID_MD5: TStringField
+      FieldKind = fkData
+      FieldName = 'ID_MD5'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 32
+    end
+  end
+  object qryMDFE_VEICULOS: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'MDFE_ID'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'MDV_ID'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'MDV_TIPO'
+        DataType = ftString
+        Precision = -1
+        Size = 1
+      end    
+      item
+        Name = 'MDV_PLACA'
+        DataType = ftString
+        Precision = -1
+        Size = 7
+      end    
+      item
+        Name = 'MDV_UF'
+        DataType = ftString
+        Precision = -1
+        Size = 2
+      end    
+      item
+        Name = 'MDV_CARROCERIA'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'MDV_RODADO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'MDV_TARA'
+        DataType = ftFMTBcd
+        Precision = 18
+        Size = 5
+      end    
+      item
+        Name = 'MDV_COD_INTERNO'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'MDV_CAPACIDADE_M3'
+        DataType = ftFMTBcd
+        Precision = 18
+        Size = 5
+      end    
+      item
+        Name = 'MDV_CAPACIDADE_KG'
+        DataType = ftFMTBcd
+        Precision = 18
+        Size = 5
+      end    
+      item
+        Name = 'MDV_PROP_CNPJ_CPF'
+        DataType = ftString
+        Precision = -1
+        Size = 14
+      end    
+      item
+        Name = 'MDV_PROP_DEFINIDO'
+        DataType = ftString
+        Precision = -1
+        Size = 1
+      end    
+      item
+        Name = 'MDV_PROP_INSC_ESTADUAL'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'MDV_PROP_NOME'
+        DataType = ftString
+        Precision = -1
+        Size = 60
+      end    
+      item
+        Name = 'MDV_PROP_RNTRC'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = 'MDV_PROP_TIPO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'MDV_PROP_UF'
+        DataType = ftString
+        Precision = -1
+        Size = 2
+      end>
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      ''
+      '-- Query reservada a inserção de Tração'
+      ''
+      'Select'
+      'mv.MDFE_ID ,'
+      'mv.MDV_ID ,'
+      'mv.MDV_TIPO ,'
+      'mv.MDV_PLACA ,'
+      'mv.MDV_UF ,'
+      'mv.MDV_CARROCERIA ,'
+      'mv.MDV_RODADO ,'
+      'mv.MDV_TARA ,'
+      'mv.MDV_COD_INTERNO ,'
+      'mv.MDV_CAPACIDADE_M3 ,'
+      'mv.MDV_CAPACIDADE_KG ,'
+      'mv.MDV_PROP_CNPJ_CPF ,'
+      'mv.MDV_PROP_DEFINIDO ,'
+      'mv.MDV_PROP_INSC_ESTADUAL ,'
+      'mv.MDV_PROP_NOME ,'
+      'mv.MDV_PROP_RNTRC ,'
+      'mv.MDV_PROP_TIPO ,'
+      'mv.MDV_PROP_UF'
+      'FROM MDFE_VEICULOS mv'
+      'WHERE mv.MDFE_ID = :MDFE_ID'
+      'AND MDV_TIPO = ''T'''
+      ''
+    )
+    InsertSQL.Strings = (
+      'insert into MDFE_VEICULOS'
+      '  (MDFE_ID, MDV_ID, MDV_TIPO, MDV_COD_INTERNO, MDV_PLACA, MDV_UF, MDV_CARROCERIA, MDV_RODADO, MDV_TARA, MDV_CAPACIDADE_KG, MDV_CAPACIDADE_M3, MDV_PROP_DEFINIDO, MDV_PROP_RNTRC, MDV_PROP_UF, MDV_PROP_TIPO, MDV_PROP_CNPJ_CPF, MDV_PROP_INSC_ESTADUAL, MDV_PROP_NOME)'
+      'values'
+      '  (:MDFE_ID, :MDV_ID, :MDV_TIPO, :MDV_COD_INTERNO, :MDV_PLACA, :MDV_UF, :MDV_CARROCERIA, :MDV_RODADO, :MDV_TARA, :MDV_CAPACIDADE_KG, :MDV_CAPACIDADE_M3, :MDV_PROP_DEFINIDO, :MDV_PROP_RNTRC, :MDV_PROP_UF, :MDV_PROP_TIPO, :MDV_PROP_CNPJ_CPF, :MDV_PROP_INSC_ESTADUAL, :MDV_PROP_NOME)'
+    )
+    UpdateSQL.Strings = (
+      'UPDATE MDFE_VEICULOS set'
+      '  MDV_ID = :MDV_ID,'
+      '  MDV_TIPO =:MDV_TIPO,'
+      '  MDV_PLACA = :MDV_PLACA,'
+      '  MDV_UF = :MDV_UF,'
+      '  MDV_CARROCERIA = :MDV_CARROCERIA,'
+      '  MDV_RODADO = :MDV_RODADO,'
+      '  MDV_TARA = :MDV_TARA,'
+      '  MDV_CAPACIDADE_KG = :MDV_CAPACIDADE_KG,'
+      '  MDV_CAPACIDADE_M3 = :MDV_CAPACIDADE_M3,'
+      '  MDV_PROP_DEFINIDO = :MDV_PROP_DEFINIDO,'
+      '  MDV_COD_INTERNO = :MDV_COD_INTERNO,'
+      '  MDV_PROP_RNTRC = :MDV_PROP_RNTRC,'
+      '  MDV_PROP_UF = :MDV_PROP_UF,'
+      '  MDV_PROP_TIPO = :MDV_PROP_TIPO,'
+      '  MDV_PROP_CNPJ_CPF  = :MDV_PROP_CNPJ_CPF,'
+      '  MDV_PROP_INSC_ESTADUAL = :MDV_PROP_INSC_ESTADUAL,'
+      '  MDV_PROP_NOME = :MDV_PROP_NOME'
+      'where'
+      ' (MDFE_ID = :MDFE_ID) and (MDV_TIPO = ''T'')'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'MDFE_ID'
+        ParamType = ptInput
+      end>
+    left = 657
+    top = 523
+    object qryMDFE_VEICULOSMDFE_ID: TLongintField
+      FieldKind = fkData
+      FieldName = 'MDFE_ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object qryMDFE_VEICULOSMDV_ID: TLongintField
+      FieldKind = fkData
+      FieldName = 'MDV_ID'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object qryMDFE_VEICULOSMDV_TIPO: TStringField
+      FieldKind = fkData
+      FieldName = 'MDV_TIPO'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      Size = 1
+    end
+    object qryMDFE_VEICULOSMDV_PLACA: TStringField
+      FieldKind = fkData
+      FieldName = 'MDV_PLACA'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 7
+    end
+    object qryMDFE_VEICULOSMDV_UF: TStringField
+      FieldKind = fkData
+      FieldName = 'MDV_UF'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+    object qryMDFE_VEICULOSMDV_CARROCERIA: TLongintField
+      FieldKind = fkData
+      FieldName = 'MDV_CARROCERIA'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryMDFE_VEICULOSMDV_RODADO: TLongintField
+      FieldKind = fkData
+      FieldName = 'MDV_RODADO'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryMDFE_VEICULOSMDV_TARA: TFMTBCDField
+      FieldKind = fkData
+      FieldName = 'MDV_TARA'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = False
+      MaxValue = '0'
+      MinValue = '0'
+      Size = 5
+    end
+    object qryMDFE_VEICULOSMDV_COD_INTERNO: TStringField
+      FieldKind = fkData
+      FieldName = 'MDV_COD_INTERNO'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryMDFE_VEICULOSMDV_CAPACIDADE_M3: TFMTBCDField
+      FieldKind = fkData
+      FieldName = 'MDV_CAPACIDADE_M3'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = False
+      MaxValue = '0'
+      MinValue = '0'
+      Size = 5
+    end
+    object qryMDFE_VEICULOSMDV_CAPACIDADE_KG: TFMTBCDField
+      FieldKind = fkData
+      FieldName = 'MDV_CAPACIDADE_KG'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = False
+      MaxValue = '0'
+      MinValue = '0'
+      Size = 5
+    end
+    object qryMDFE_VEICULOSMDV_PROP_CNPJ_CPF: TStringField
+      FieldKind = fkData
+      FieldName = 'MDV_PROP_CNPJ_CPF'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 14
+    end
+    object qryMDFE_VEICULOSMDV_PROP_DEFINIDO: TStringField
+      FieldKind = fkData
+      FieldName = 'MDV_PROP_DEFINIDO'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+    object qryMDFE_VEICULOSMDV_PROP_INSC_ESTADUAL: TStringField
+      FieldKind = fkData
+      FieldName = 'MDV_PROP_INSC_ESTADUAL'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryMDFE_VEICULOSMDV_PROP_NOME: TStringField
+      FieldKind = fkData
+      FieldName = 'MDV_PROP_NOME'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qryMDFE_VEICULOSMDV_PROP_RNTRC: TStringField
+      FieldKind = fkData
+      FieldName = 'MDV_PROP_RNTRC'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+    object qryMDFE_VEICULOSMDV_PROP_TIPO: TLongintField
+      FieldKind = fkData
+      FieldName = 'MDV_PROP_TIPO'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryMDFE_VEICULOSMDV_PROP_UF: TStringField
+      FieldKind = fkData
+      FieldName = 'MDV_PROP_UF'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+  end
+  object dsMDFE_VEICULOS: TDataSource
+    DataSet = qryMDFE_VEICULOS
+    left = 657
+    top = 576
+  end
+  object dsMDFE_CONDUTORES: TDataSource
+    DataSet = qryMDFE_CONDUTORES
+    left = 467
+    top = 692
+  end
+  object qryMDFE_CONDUTORES: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'CPF_CONDUTOR'
+        DataType = ftString
+        Precision = -1
+        Size = 11
+      end    
+      item
+        Name = 'ID_ITEM'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'MDFE_ID'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'NOME_CONDUTOR'
+        DataType = ftString
+        Precision = -1
+        Size = 40
+      end>
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      'SELECT'
+      'mc.CPF_CONDUTOR,'
+      'mc.ID_ITEM,'
+      'mc.MDFE_ID,'
+      'mc.NOME_CONDUTOR'
+      'FROM MDFE_CONDUTORES mc'
+      'WHERE mc.MDFE_ID = :MDFE_ID'
+    )
+    InsertSQL.Strings = (
+      'insert into MDFE_CONDUTORES'
+      '  (MDFE_ID, ID_ITEM, CPF_CONDUTOR, NOME_CONDUTOR)'
+      'values'
+      '  (:MDFE_ID, :ID_ITEM, :CPF_CONDUTOR, :NOME_CONDUTOR)'
+    )
+    UpdateSQL.Strings = (
+      'UPDATE MDFE_CONDUTORES SET'
+      '  ID_ITEM = :ID_ITEM,'
+      '  CPF_CONDUTOR = :CPF_CONDUTOR,'
+      '  NOME_CONDUTOR = :NOME_CONDUTOR'
+      'where'
+      '  MDFE_ID = :MDFE_ID'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'MDFE_ID'
+        ParamType = ptInput
+      end>
+    left = 467
+    top = 638
+    object qryMDFE_CONDUTORESCPF_CONDUTOR: TStringField
+      FieldKind = fkData
+      FieldName = 'CPF_CONDUTOR'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 11
+    end
+    object qryMDFE_CONDUTORESID_ITEM: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_ITEM'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object qryMDFE_CONDUTORESMDFE_ID: TLongintField
+      FieldKind = fkData
+      FieldName = 'MDFE_ID'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object qryMDFE_CONDUTORESNOME_CONDUTOR: TStringField
+      FieldKind = fkData
+      FieldName = 'NOME_CONDUTOR'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+  end
+  object qryMDFE_PERCURSO: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'MDFE_ID'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'MPE_ID'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'MPE_UF'
+        DataType = ftString
+        Precision = -1
+        Size = 2
+      end>
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      'SELECT'
+      'mp.MDFE_ID,'
+      'mp.MPE_ID,'
+      'mp.MPE_UF'
+      'FROM MDFE_PERCURSO mp'
+      'WHERE mp.MDFE_ID = :MDFE_ID'
+    )
+    InsertSQL.Strings = (
+      'insert into MDFE_PERCURSO'
+      '  (MDFE_ID, MPE_ID, MPE_UF)'
+      'values'
+      '  (:MDFE_ID, :MPE_ID, :MPE_UF)'
+    )
+    UpdateSQL.Strings = (
+      'UPDATE MDFE_PERCURSO set'
+      ' MPE_ID = :MPE_ID,'
+      ' MPE_UF = :MPE_UF'
+      'where'
+      ' MDFE_ID = :MDFE_ID'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'MDFE_ID'
+        ParamType = ptInput
+      end>
+    left = 127
+    top = 638
+    object qryMDFE_PERCURSOMDFE_ID: TLongintField
+      FieldKind = fkData
+      FieldName = 'MDFE_ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object qryMDFE_PERCURSOMPE_ID: TLongintField
+      FieldKind = fkData
+      FieldName = 'MPE_ID'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object qryMDFE_PERCURSOMPE_UF: TStringField
+      FieldKind = fkData
+      FieldName = 'MPE_UF'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+  end
+  object dsMDFE_PERCURSO: TDataSource
+    DataSet = qryMDFE_PERCURSO
+    left = 127
+    top = 692
+  end
+  object qryMDFE_EVENTOS: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'MDFE_ID'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'MDFE_SEQ'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'MDFE_COD_TP'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'XML_EVENTO'
+        DataType = ftMemo
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = 'MDFE_LOTE'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'PERFIL_ID'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'LOG_MSG'
+        DataType = ftMemo
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = 'USR_COD'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'MDFE_CORRECAO'
+        DataType = ftMemo
+        Precision = -1
+        Size = 8
+      end>
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      'SELECT'
+      'me.MDFE_ID,'
+      'me.MDFE_SEQ,'
+      'me.MDFE_COD_TP,'
+      'me.XML_EVENTO,'
+      'me.MDFE_LOTE,'
+      'me.PERFIL_ID,'
+      'me.LOG_MSG,'
+      'me.USR_COD,'
+      'me.MDFE_CORRECAO'
+      'FROM MDFE_EVENTOS me'
+      'WHERE me.MDFE_ID = :MDFE_ID'
+    )
+    InsertSQL.Strings = (
+      'insert into MDFE_EVENTOS'
+      '  (MDFE_ID, MDFE_SEQ, MDFE_COD_TP, XML_EVENTO, MDFE_LOTE, PERFIL_ID, LOG_MSG, USR_COD, MDFE_CORRECAO)'
+      'values'
+      '  (:MDFE_ID, :MDFE_SEQ, :MDFE_COD_TP, :XML_EVENTO, :MDFE_LOTE, :PERFIL_ID, :LOG_MSG, :USR_COD, :MDFE_CORRECAO)'
+    )
+    UpdateSQL.Strings = (
+      'UPDATE MDFE_EVENTOS set'
+      '  MDFE_SEQ = :MDFE_SEQ,'
+      '  MDFE_COD_TP = :MDFE_COD_TP,'
+      '  XML_EVENTO = :XML_EVENTO,'
+      '  MDFE_LOTE = :MDFE_LOTE,'
+      '  PERFIL_ID = :PERFIL_ID,'
+      '  LOG_MSG = :LOG_MSG,'
+      '  USR_COD = :USR_COD,'
+      '  MDFE_CORRECAO = :MDFE_CORRECAO'
+      'where'
+      '  MDFE_ID = :MDFE_ID'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'MDFE_ID'
+        ParamType = ptInput
+      end>
+    left = 281
+    top = 637
+    object qryMDFE_EVENTOSMDFE_ID: TLongintField
+      FieldKind = fkData
+      FieldName = 'MDFE_ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryMDFE_EVENTOSMDFE_SEQ: TLongintField
+      FieldKind = fkData
+      FieldName = 'MDFE_SEQ'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryMDFE_EVENTOSMDFE_COD_TP: TLongintField
+      FieldKind = fkData
+      FieldName = 'MDFE_COD_TP'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryMDFE_EVENTOSXML_EVENTO: TMemoField
+      FieldKind = fkData
+      FieldName = 'XML_EVENTO'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Size = 8
+      Transliterate = False
+    end
+    object qryMDFE_EVENTOSMDFE_LOTE: TLongintField
+      FieldKind = fkData
+      FieldName = 'MDFE_LOTE'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryMDFE_EVENTOSPERFIL_ID: TLongintField
+      FieldKind = fkData
+      FieldName = 'PERFIL_ID'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryMDFE_EVENTOSLOG_MSG: TMemoField
+      FieldKind = fkData
+      FieldName = 'LOG_MSG'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Size = 8
+      Transliterate = False
+    end
+    object qryMDFE_EVENTOSUSR_COD: TLongintField
+      FieldKind = fkData
+      FieldName = 'USR_COD'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryMDFE_EVENTOSMDFE_CORRECAO: TMemoField
+      FieldKind = fkData
+      FieldName = 'MDFE_CORRECAO'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Size = 8
+      Transliterate = False
+    end
+  end
+  object dsMDFE_EVENTOS: TDataSource
+    DataSet = qryMDFE_EVENTOS
+    left = 281
+    top = 692
+  end
+  object qryTipoCarroceria: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'TIPO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'DESCRICAO'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 16
+      end>
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      'select (0) as Tipo, ''Não Aplicável'' as descricao from RDB$DATABASE'
+      'union all'
+      'select (1) as Tipo, ''Aberta'' as descricao from RDB$DATABASE'
+      'union all'
+      'select (2) as Tipo, ''Fechada/Baú'' as descricao from RDB$DATABASE'
+      'union all'
+      'select (3) as Tipo, ''Granelera'' as descricao from RDB$DATABASE'
+      'union all'
+      'select (4) as Tipo, ''Porta-Contêiner'' as descricao from RDB$DATABASE'
+      'union all'
+      'select (5) as Tipo, ''Sider'' as descricao from RDB$DATABASE'
+      'DATABASE'
+    )
+    Params = <>
+    left = 1290
+    top = 522
+    object qryTipoCarroceriaTIPO: TLongintField
+      FieldKind = fkData
+      FieldName = 'TIPO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryTipoCarroceriaDESCRICAO: TStringField
+      FieldKind = fkData
+      FieldName = 'DESCRICAO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 16
+    end
+  end
+  object dsTipoCarroceria: TDataSource
+    DataSet = qryTipoCarroceria
+    left = 1290
+    top = 580
+  end
+  object qryTipoRodado: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'TIPO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'DESCRICAO'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 16
+      end>
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      'select (0) as Tipo, ''Não Aplicável'' as descricao from RDB$DATABASE'
+      'union all'
+      'select (1) as Tipo, ''Truck'' as descricao from RDB$DATABASE'
+      'union all'
+      'select (2) as Tipo, ''Toco'' as descricao from RDB$DATABASE'
+      'union all'
+      'select (3) as Tipo, ''Cavalo Mecânico'' as descricao from RDB$DATABASE'
+      'union all'
+      'select (4) as Tipo, ''VAN'' as descricao from RDB$DATABASE'
+      'union all'
+      'select (5) as Tipo, ''Utilitario'' as descricao from RDB$DATABASE'
+      'union all'
+      'select (6) as Tipo, ''Outros'' as descricao from RDB$DATABASE'
+      'DATABASE'
+    )
+    Params = <>
+    left = 1290
+    top = 636
+    object qryTipoRodadoTIPO: TLongintField
+      FieldKind = fkData
+      FieldName = 'TIPO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryTipoRodadoDESCRICAO: TStringField
+      FieldKind = fkData
+      FieldName = 'DESCRICAO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 16
+    end
+  end
+  object dsTipoRodado: TDataSource
+    DataSet = qryTipoRodado
+    left = 1290
+    top = 692
+  end
+  object dsFormaEmissao: TDataSource
+    DataSet = qryFormaEmissao
+    left = 1162
+    top = 692
+  end
+  object dsModalidade: TDataSource
+    DataSet = qryModalidade
+    left = 1428
+    top = 580
+  end
+  object dsTipoEmitente: TDataSource
+    DataSet = qryTipoEmitente
+    left = 1162
+    top = 580
+  end
+  object dsUFCarregamento: TDataSource
+    DataSet = qryUFCarregamento
+    left = 1010
+    top = 570
+  end
+  object qryFormaEmissao: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'TIPO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'DESCRICAO'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 12
+      end>
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      'select (1) as Tipo, ''Normal'' as descricao from RDB$DATABASE'
+      'union all'
+      'select (2) as Tipo, ''Contigência'' as descricao from RDB$DATABASE'
+      'DATABASE'
+      ''
+    )
+    Params = <>
+    left = 1162
+    top = 636
+    object qryFormaEmissaoTIPO: TLongintField
+      FieldKind = fkData
+      FieldName = 'TIPO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryFormaEmissaoDESCRICAO: TStringField
+      FieldKind = fkData
+      FieldName = 'DESCRICAO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 12
+    end
+  end
+  object qryUFCarregamento: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'ID_UF'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'SIGLA'
+        DataType = ftString
+        Precision = -1
+        Size = 2
+      end>
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      'select uf.id_uf, uf.sigla from uf'
+    )
+    Params = <>
+    left = 1010
+    top = 514
+    object qryUFCarregamentoID_UF: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_UF'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryUFCarregamentoSIGLA: TStringField
+      FieldKind = fkData
+      FieldName = 'SIGLA'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+  end
+  object qryModalidade: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'TIPO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'DESCRICAO'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 11
+      end>
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      'select (1) as Tipo, ''Rodoviário'' as descricao from RDB$DATABASE'
+      'union all'
+      'select (2) as Tipo, ''Aquário'' as descricao from RDB$DATABASE'
+      'DATABASE'
+      ''
+    )
+    Params = <>
+    left = 1428
+    top = 522
+    object qryModalidadeTIPO: TLongintField
+      FieldKind = fkData
+      FieldName = 'TIPO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryModalidadeDESCRICAO: TStringField
+      FieldKind = fkData
+      FieldName = 'DESCRICAO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 11
+    end
+  end
+  object qryTipoEmitente: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'TIPO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'DESCRICAO'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 40
+      end>
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      'select (1) as Tipo, ''Prestador de Serviço de Transporte'' as descricao from RDB$DATABASE'
+      'union all'
+      'select (2) as Tipo, ''Não Prestador de Serviço de Transporte'' as descricao from RDB$DATABASE'
+      'DATABASE'
+      ''
+    )
+    Params = <>
+    left = 1162
+    top = 522
+    object qryTipoEmitenteTIPO: TLongintField
+      FieldKind = fkData
+      FieldName = 'TIPO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryTipoEmitenteDESCRICAO: TStringField
+      FieldKind = fkData
+      FieldName = 'DESCRICAO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+  end
+  object qryTipoTransportador: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'TIPO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'DESCRICAO'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 3
+      end>
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      'select (1) as Tipo, ''ETC'' as descricao from RDB$DATABASE'
+      'union all'
+      'select (1) as Tipo, ''TAC'' as descricao from RDB$DATABASE'
+      'union all'
+      'select (2) as Tipo, ''CTC'' as descricao from RDB$DATABASE'
+      'DATABASE'
+    )
+    Params = <>
+    left = 1010
+    top = 636
+    object qryTipoTransportadorTIPO: TLongintField
+      FieldKind = fkData
+      FieldName = 'TIPO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryTipoTransportadorDESCRICAO: TStringField
+      FieldKind = fkData
+      FieldName = 'DESCRICAO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3
+    end
+  end
+  object dsTipoTransportador: TDataSource
+    DataSet = qryTipoTransportador
+    left = 1010
+    top = 692
+  end
+  object qryGridDocumentos: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'CHAVE'
+        DataType = ftString
+        Precision = -1
+        Size = 44
+      end    
+      item
+        Name = 'UF_C'
+        DataType = ftString
+        Precision = -1
+        Size = 2
+      end    
+      item
+        Name = 'CIDADE_CARREGAMENTO'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'UF_D'
+        DataType = ftString
+        Precision = -1
+        Size = 2
+      end    
+      item
+        Name = 'CIDADE_DESCARREGAMENTO'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'IBGE_C'
+        DataType = ftString
+        Precision = -1
+        Size = 7
+      end    
+      item
+        Name = 'IBGE_D'
+        DataType = ftString
+        Precision = -1
+        Size = 7
+      end    
+      item
+        Name = 'PESO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'VALOR'
+        DataType = ftInteger
+        Precision = -1
+      end>
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      'select'
+      'cast(('''') as varchar(44)) as Chave,'
+      'cast(('''') as varchar(2)) as UF_C,'
+      'cast(('''') as varchar(30)) as Cidade_Carregamento,'
+      'cast(('''') as varchar(2)) as UF_D,'
+      'cast(('''') as varchar(30)) as Cidade_Descarregamento,'
+      'cast(('''') as varchar(7)) AS IBGE_C,'
+      'cast(('''') as varchar(7)) AS IBGE_D,'
+      'cast((0) as NUMERIC ) AS Peso,'
+      'cast((0) as NUMERIC ) AS Valor'
+      'from RDB$DATABASE'
+      'where 1 <> 1'
+    )
+    Params = <>
+    left = 830
+    top = 563
+    object qryGridDocumentosCHAVE: TStringField
+      FieldKind = fkData
+      FieldName = 'CHAVE'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 44
+    end
+    object qryGridDocumentosUF_C: TStringField
+      FieldKind = fkData
+      FieldName = 'UF_C'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+    object qryGridDocumentosCIDADE_CARREGAMENTO: TStringField
+      FieldKind = fkData
+      FieldName = 'CIDADE_CARREGAMENTO'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object qryGridDocumentosUF_D: TStringField
+      FieldKind = fkData
+      FieldName = 'UF_D'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+    object qryGridDocumentosCIDADE_DESCARREGAMENTO: TStringField
+      FieldKind = fkData
+      FieldName = 'CIDADE_DESCARREGAMENTO'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object qryGridDocumentosPESO: TLongintField
+      FieldKind = fkData
+      FieldName = 'PESO'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryGridDocumentosVALOR: TLongintField
+      FieldKind = fkData
+      FieldName = 'VALOR'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryGridDocumentosIBGE_C: TStringField
+      FieldKind = fkData
+      FieldName = 'IBGE_C'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 7
+    end
+    object qryGridDocumentosIBGE_D: TStringField
+      FieldKind = fkData
+      FieldName = 'IBGE_D'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 7
+    end
+  end
+  object dsGridDocumentos: TDataSource
+    DataSet = qryGridDocumentos
+    left = 830
+    top = 627
+  end
+  object qryDados: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'EMITENTE_LETRA'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 40
+      end    
+      item
+        Name = 'MODALIDADE_LETRA'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 11
+      end    
+      item
+        Name = 'TRANSPORTADOR_LETRA'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 3
+      end    
+      item
+        Name = 'EMISSAO_LETRA'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 12
+      end    
+      item
+        Name = 'RODADO_LETRA'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 16
+      end    
+      item
+        Name = 'CARROCERIA_LETRA'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 16
+      end    
+      item
+        Name = 'SERIE_DOC'
+        DataType = ftString
+        Precision = -1
+        Size = 3
+      end    
+      item
+        Name = 'NUMERO_DOC'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'DATA_EMISSAO'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'DATA_VIAGEM'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'TIPO_EMITENTE'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'MODALIDADE'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'HORA_EMISSAO'
+        DataType = ftTime
+        Precision = -1
+      end    
+      item
+        Name = 'HORA_VIAGEM'
+        DataType = ftTime
+        Precision = -1
+      end    
+      item
+        Name = 'TIPO_TRANSPORTADOR'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'FORMA_EMISSAO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'UF_CARREGAMENTO'
+        DataType = ftString
+        Precision = -1
+        Size = 2
+      end    
+      item
+        Name = 'UF_DESCARREGAMENTO'
+        DataType = ftString
+        Precision = -1
+        Size = 2
+      end    
+      item
+        Name = 'NF_EMPRESA'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'STATUS_MDFE'
+        DataType = ftString
+        Precision = -1
+        Size = 1
+      end    
+      item
+        Name = 'TOT_MERCADORIAS'
+        DataType = ftBCD
+        Precision = 18
+        Size = 2
+      end    
+      item
+        Name = 'QUANTIDADECTE'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'QUANTIDADENFE'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'QUANTIDADENF11A'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'PESOBRUTOCARGAMERCADORIA'
+        DataType = ftFMTBcd
+        Precision = 18
+        Size = 5
+      end    
+      item
+        Name = 'UND_MEDIDA'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'CHAVE_MDFE'
+        DataType = ftString
+        Precision = -1
+        Size = 44
+      end    
+      item
+        Name = 'PROTOCOLO_MDFE'
+        DataType = ftString
+        Precision = -1
+        Size = 15
+      end    
+      item
+        Name = 'MDV_PLACA'
+        DataType = ftString
+        Precision = -1
+        Size = 7
+      end    
+      item
+        Name = 'MDV_UF'
+        DataType = ftString
+        Precision = -1
+        Size = 2
+      end    
+      item
+        Name = 'MDV_TARA'
+        DataType = ftFMTBcd
+        Precision = 18
+        Size = 5
+      end    
+      item
+        Name = 'MDV_RODADO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'MDV_CAPACIDADE_KG'
+        DataType = ftFMTBcd
+        Precision = 18
+        Size = 5
+      end    
+      item
+        Name = 'MDV_TIPO'
+        DataType = ftString
+        Precision = -1
+        Size = 1
+      end    
+      item
+        Name = 'MDV_CAPACIDADE_M3'
+        DataType = ftFMTBcd
+        Precision = 18
+        Size = 5
+      end    
+      item
+        Name = 'MDV_RNTRC'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = 'MDV_TIPO_1'
+        DataType = ftString
+        Precision = -1
+        Size = 1
+      end    
+      item
+        Name = 'MDV_COD_INTERNO'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'MDV_PROP_UF'
+        DataType = ftString
+        Precision = -1
+        Size = 2
+      end    
+      item
+        Name = 'MDV_PROP_CNPJ_CPF'
+        DataType = ftString
+        Precision = -1
+        Size = 14
+      end    
+      item
+        Name = 'MDV_PROP_INSC_ESTADUAL'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'MDV_PROP_NOME'
+        DataType = ftString
+        Precision = -1
+        Size = 60
+      end    
+      item
+        Name = 'MDD_CHAVE'
+        DataType = ftString
+        Precision = -1
+        Size = 44
+      end    
+      item
+        Name = 'MDD_SEG_COD_BARRA'
+        DataType = ftString
+        Precision = -1
+        Size = 36
+      end    
+      item
+        Name = 'MDD_PESO'
+        DataType = ftFMTBcd
+        Precision = 18
+        Size = 5
+      end    
+      item
+        Name = 'MDD_VALOR'
+        DataType = ftBCD
+        Precision = 18
+        Size = 2
+      end    
+      item
+        Name = 'NOME_CONDUTOR'
+        DataType = ftString
+        Precision = -1
+        Size = 40
+      end    
+      item
+        Name = 'CPF_CONDUTOR'
+        DataType = ftString
+        Precision = -1
+        Size = 11
+      end    
+      item
+        Name = 'MDC_CIDADE'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'MDC_CIDADE_IBGE'
+        DataType = ftString
+        Precision = -1
+        Size = 7
+      end    
+      item
+        Name = 'CARREGAMENTO'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'DESCARREGAMENTO'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end>
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      'SELECT DISTINCT'
+      'CASE when m.TIPO_EMITENTE = ''1'' THEN ''Prestador de servico de Transporte'''
+      'WHEN m.TIPO_EMITENTE = ''2'' THEN ''Não prestador de serviço de Transporte'''
+      'END AS EMITENTE_LETRA,'
+      '--------------------------'
+      'CASE WHEN m.MODALIDADE = ''1'' THEN ''Rodoviário'''
+      'WHEN m.MODALIDADE = ''2'' THEN ''Aquário'''
+      'END AS MODALIDADE_letra,'
+      '---------------------------'
+      'CASE WHEN m.TIPO_TRANSPORTADOR = ''1'' THEN ''ETC'''
+      'WHEN m.TIPO_TRANSPORTADOR  = ''2'' THEN ''TAC'''
+      'WHEN m.TIPO_TRANSPORTADOR = ''3'' THEN ''CTC'''
+      'END AS TRANSPORTADOR_LETRA,'
+      '---------------------------'
+      'CASE WHEN m.FORMA_EMISSAO = ''1'' THEN ''Normal'''
+      'WHEN m.FORMA_EMISSAO = ''2'' THEN ''Contigência'''
+      'END AS EMISSAO_LETRA,'
+      '---------------------------'
+      'CASE WHEN mv.MDV_RODADO = ''1'' THEN ''Não Aplicável'''
+      'WHEN mv.MDV_RODADO = ''2'' THEN ''Truck'''
+      'WHEN mv.MDV_RODADO = ''3'' THEN ''Toco'''
+      'WHEN mv.MDV_RODADO = ''4'' THEN ''Cavalo Mecânico'''
+      'WHEN mv.MDV_RODADO = ''5'' THEN ''VAN'''
+      'WHEN mv.MDV_RODADO = ''6'' THEN ''Utilitários'''
+      'WHEN mv.MDV_RODADO = ''7'' THEN ''Outros'''
+      'END AS RODADO_LETRA,'
+      '-------------------------'
+      'CASE WHEN mv.MDV_CARROCERIA = ''1'' THEN ''Não Aplicável'''
+      'WHEN mv.MDV_CARROCERIA = ''2'' THEN ''Aberta'''
+      'WHEN mv.MDV_CARROCERIA = ''3'' THEN ''Fechada/Baú'''
+      'WHEN mv.MDV_CARROCERIA = ''4'' THEN ''Granelera'''
+      'WHEN mv.MDV_CARROCERIA = ''5'' THEN ''Porta-Contêinie'''
+      'WHEN mv.MDV_CARROCERIA = ''6'' THEN ''Sider'''
+      'END AS CARROCERIA_LETRA,'
+      '-------------------------'
+      'm.serie_doc,'
+      'm.numero_doc,'
+      'm.data_emissao,'
+      'm.data_viagem,'
+      'm.tipo_emitente,'
+      'm.modalidade,'
+      'm.hora_emissao,'
+      'm.hora_viagem,'
+      'm.tipo_transportador,'
+      'm.forma_emissao,'
+      'm.uf_carregamento,'
+      'm.uf_descarregamento,'
+      'm.nf_empresa,'
+      'm.status_mdfe,'
+      'm.tot_mercadorias,'
+      'm.tot_cte as QuantidadeCTe,'
+      'm.tot_nfe as QuantidadeNFe,'
+      'm.tot_nf1_nf1a as QuantidadeNF11A,'
+      'm.tot_peso as pesoBrutoCargaMercadoria,'
+      'm.und_medida,'
+      'm.chave_mdfe,'
+      'm.protocolo_mdfe,'
+      '----'
+      'mv.mdv_placa,'
+      'mv.mdv_uf,'
+      'mv.mdv_tara,'
+      'mv.mdv_rodado,'
+      'mv.mdv_capacidade_kg,'
+      'mv.mdv_tipo,'
+      'mv.mdv_capacidade_m3,'
+      '-----'
+      'mv.mdv_rntrc,'
+      'mv.mdv_tipo,'
+      'mv.mdv_cod_interno,'
+      'mv.mdv_prop_uf,'
+      'mv.mdv_prop_cnpj_cpf,'
+      'mv.mdv_prop_insc_estadual,'
+      'mv.mdv_prop_nome,'
+      '------'
+      'mld.mdd_chave,'
+      'mld.mdd_seg_cod_barra,'
+      'mld.mdd_peso,'
+      'mld.mdd_valor,'
+      '------'
+      'mc.nome_condutor,'
+      'mc.cpf_condutor,'
+      '------'
+      'mlc.mdc_cidade,'
+      'mlc.mdc_cidade_ibge,'
+      'mlc.mdc_cidade as carregamento,'
+      'mlcu.mdc_cidade as descarregamento'
+      'from mdfe m'
+      'inner join mdfe_veiculos mv on  m.mdfe_id = mv.mdfe_id'
+      'inner join mdfe_localcarga mlc on  m.mdfe_id = mlc.mdfe_id'
+      'inner join mdfe_localcarga mlcu on  m.mdfe_id = mlcu.mdfe_id'
+      'inner join mdfe_condutores mc on mc.mdfe_id = m.mdfe_id'
+      'inner join mdfe_localcarga_docs mld on mld.mdfe_id = m.mdfe_id'
+      'where 1 = 1'
+      '--and mlcu.mdc_tipo = ''D'''
+      '--and mlc.mdc_tipo = ''C'''
+    )
+    Params = <>
+    left = 1055
+    top = 320
+    object qryDadosEMITENTE_LETRA: TStringField
+      FieldKind = fkData
+      FieldName = 'EMITENTE_LETRA'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qryDadosMODALIDADE_LETRA: TStringField
+      FieldKind = fkData
+      FieldName = 'MODALIDADE_LETRA'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 11
+    end
+    object qryDadosTRANSPORTADOR_LETRA: TStringField
+      FieldKind = fkData
+      FieldName = 'TRANSPORTADOR_LETRA'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3
+    end
+    object qryDadosEMISSAO_LETRA: TStringField
+      FieldKind = fkData
+      FieldName = 'EMISSAO_LETRA'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 12
+    end
+    object qryDadosRODADO_LETRA: TStringField
+      FieldKind = fkData
+      FieldName = 'RODADO_LETRA'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 16
+    end
+    object qryDadosCARROCERIA_LETRA: TStringField
+      FieldKind = fkData
+      FieldName = 'CARROCERIA_LETRA'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 16
+    end
+    object qryDadosSERIE_DOC: TStringField
+      FieldKind = fkData
+      FieldName = 'SERIE_DOC'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3
+    end
+    object qryDadosNUMERO_DOC: TLongintField
+      FieldKind = fkData
+      FieldName = 'NUMERO_DOC'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosDATA_EMISSAO: TDateField
+      FieldKind = fkData
+      FieldName = 'DATA_EMISSAO'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosDATA_VIAGEM: TDateField
+      FieldKind = fkData
+      FieldName = 'DATA_VIAGEM'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosTIPO_EMITENTE: TLongintField
+      FieldKind = fkData
+      FieldName = 'TIPO_EMITENTE'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosMODALIDADE: TLongintField
+      FieldKind = fkData
+      FieldName = 'MODALIDADE'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosHORA_EMISSAO: TTimeField
+      FieldKind = fkData
+      FieldName = 'HORA_EMISSAO'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosHORA_VIAGEM: TTimeField
+      FieldKind = fkData
+      FieldName = 'HORA_VIAGEM'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosTIPO_TRANSPORTADOR: TLongintField
+      FieldKind = fkData
+      FieldName = 'TIPO_TRANSPORTADOR'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosFORMA_EMISSAO: TLongintField
+      FieldKind = fkData
+      FieldName = 'FORMA_EMISSAO'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosUF_CARREGAMENTO: TStringField
+      FieldKind = fkData
+      FieldName = 'UF_CARREGAMENTO'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+    object qryDadosUF_DESCARREGAMENTO: TStringField
+      FieldKind = fkData
+      FieldName = 'UF_DESCARREGAMENTO'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+    object qryDadosNF_EMPRESA: TLongintField
+      FieldKind = fkData
+      FieldName = 'NF_EMPRESA'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosSTATUS_MDFE: TStringField
+      FieldKind = fkData
+      FieldName = 'STATUS_MDFE'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+    object qryDadosTOT_MERCADORIAS: TBCDField
+      FieldKind = fkData
+      FieldName = 'TOT_MERCADORIAS'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 18
+      Currency = False
+      MaxValue = 0
+      MinValue = 0
+      Size = 2
+    end
+    object qryDadosQUANTIDADECTE: TLongintField
+      FieldKind = fkData
+      FieldName = 'QUANTIDADECTE'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosQUANTIDADENFE: TLongintField
+      FieldKind = fkData
+      FieldName = 'QUANTIDADENFE'
+      Index = 22
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosQUANTIDADENF11A: TLongintField
+      FieldKind = fkData
+      FieldName = 'QUANTIDADENF11A'
+      Index = 23
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosPESOBRUTOCARGAMERCADORIA: TFMTBCDField
+      FieldKind = fkData
+      FieldName = 'PESOBRUTOCARGAMERCADORIA'
+      Index = 24
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = False
+      MaxValue = '0'
+      MinValue = '0'
+      Size = 5
+    end
+    object qryDadosUND_MEDIDA: TLongintField
+      FieldKind = fkData
+      FieldName = 'UND_MEDIDA'
+      Index = 25
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosCHAVE_MDFE: TStringField
+      FieldKind = fkData
+      FieldName = 'CHAVE_MDFE'
+      Index = 26
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 44
+    end
+    object qryDadosPROTOCOLO_MDFE: TStringField
+      FieldKind = fkData
+      FieldName = 'PROTOCOLO_MDFE'
+      Index = 27
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object qryDadosMDV_PLACA: TStringField
+      FieldKind = fkData
+      FieldName = 'MDV_PLACA'
+      Index = 28
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 7
+    end
+    object qryDadosMDV_UF: TStringField
+      FieldKind = fkData
+      FieldName = 'MDV_UF'
+      Index = 29
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+    object qryDadosMDV_TARA: TFMTBCDField
+      FieldKind = fkData
+      FieldName = 'MDV_TARA'
+      Index = 30
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = False
+      MaxValue = '0'
+      MinValue = '0'
+      Size = 5
+    end
+    object qryDadosMDV_RODADO: TLongintField
+      FieldKind = fkData
+      FieldName = 'MDV_RODADO'
+      Index = 31
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosMDV_CAPACIDADE_KG: TFMTBCDField
+      FieldKind = fkData
+      FieldName = 'MDV_CAPACIDADE_KG'
+      Index = 32
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = False
+      MaxValue = '0'
+      MinValue = '0'
+      Size = 5
+    end
+    object qryDadosMDV_TIPO: TStringField
+      FieldKind = fkData
+      FieldName = 'MDV_TIPO'
+      Index = 33
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+    object qryDadosMDV_CAPACIDADE_M3: TFMTBCDField
+      FieldKind = fkData
+      FieldName = 'MDV_CAPACIDADE_M3'
+      Index = 34
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = False
+      MaxValue = '0'
+      MinValue = '0'
+      Size = 5
+    end
+    object qryDadosMDV_RNTRC: TStringField
+      FieldKind = fkData
+      FieldName = 'MDV_RNTRC'
+      Index = 35
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+    object qryDadosMDV_TIPO_1: TStringField
+      FieldKind = fkData
+      FieldName = 'MDV_TIPO_1'
+      Index = 36
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+    object qryDadosMDV_COD_INTERNO: TStringField
+      FieldKind = fkData
+      FieldName = 'MDV_COD_INTERNO'
+      Index = 37
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosMDV_PROP_UF: TStringField
+      FieldKind = fkData
+      FieldName = 'MDV_PROP_UF'
+      Index = 38
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+    object qryDadosMDV_PROP_CNPJ_CPF: TStringField
+      FieldKind = fkData
+      FieldName = 'MDV_PROP_CNPJ_CPF'
+      Index = 39
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 14
+    end
+    object qryDadosMDV_PROP_INSC_ESTADUAL: TStringField
+      FieldKind = fkData
+      FieldName = 'MDV_PROP_INSC_ESTADUAL'
+      Index = 40
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosMDV_PROP_NOME: TStringField
+      FieldKind = fkData
+      FieldName = 'MDV_PROP_NOME'
+      Index = 41
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qryDadosMDD_CHAVE: TStringField
+      FieldKind = fkData
+      FieldName = 'MDD_CHAVE'
+      Index = 42
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 44
+    end
+    object qryDadosMDD_SEG_COD_BARRA: TStringField
+      FieldKind = fkData
+      FieldName = 'MDD_SEG_COD_BARRA'
+      Index = 43
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 36
+    end
+    object qryDadosMDD_PESO: TFMTBCDField
+      FieldKind = fkData
+      FieldName = 'MDD_PESO'
+      Index = 44
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = False
+      MaxValue = '0'
+      MinValue = '0'
+      Size = 5
+    end
+    object qryDadosMDD_VALOR: TBCDField
+      FieldKind = fkData
+      FieldName = 'MDD_VALOR'
+      Index = 45
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 18
+      Currency = False
+      MaxValue = 0
+      MinValue = 0
+      Size = 2
+    end
+    object qryDadosNOME_CONDUTOR: TStringField
+      FieldKind = fkData
+      FieldName = 'NOME_CONDUTOR'
+      Index = 46
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qryDadosCPF_CONDUTOR: TStringField
+      FieldKind = fkData
+      FieldName = 'CPF_CONDUTOR'
+      Index = 47
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 11
+    end
+    object qryDadosMDC_CIDADE: TStringField
+      FieldKind = fkData
+      FieldName = 'MDC_CIDADE'
+      Index = 48
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object qryDadosMDC_CIDADE_IBGE: TStringField
+      FieldKind = fkData
+      FieldName = 'MDC_CIDADE_IBGE'
+      Index = 49
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 7
+    end
+    object qryDadosCARREGAMENTO: TStringField
+      FieldKind = fkData
+      FieldName = 'CARREGAMENTO'
+      Index = 50
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object qryDadosDESCARREGAMENTO: TStringField
+      FieldKind = fkData
+      FieldName = 'DESCARREGAMENTO'
+      Index = 51
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+  end
+  object dsDados: TDataSource
+    DataSet = qryDados
+    left = 1055
+    top = 385
+  end
+  object qryTipoProprietario: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'TIPO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'DESCRICAO'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 3
+      end>
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      'select (1) as Tipo, ''TAC Agregado'' as descricao from RDB$DATABASE'
+      'union all'
+      'select (2) as Tipo, ''TAC Independente'' as descricao from RDB$DATABASE'
+      'union all'
+      'select (3) as Tipo, ''Outros'' as descricao from RDB$DATABASE'
+      'DATABASE'
+    )
+    Params = <>
+    left = 1368
+    top = 314
+    object qryTipoTransportadorTIPO1: TLongintField
+      FieldKind = fkData
+      FieldName = 'TIPO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryTipoTransportadorDESCRICAO1: TStringField
+      FieldKind = fkData
+      FieldName = 'DESCRICAO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3
+    end
+  end
+  object dsTipoProprietario: TDataSource
+    DataSet = qryTipoProprietario
+    left = 1368
+    top = 375
+  end
+  object qryREBOQUES: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'MDFE_ID'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'MDV_ID'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'MDV_TIPO'
+        DataType = ftString
+        Precision = -1
+        Size = 1
+      end    
+      item
+        Name = 'MDV_PLACA'
+        DataType = ftString
+        Precision = -1
+        Size = 7
+      end    
+      item
+        Name = 'MDV_UF'
+        DataType = ftString
+        Precision = -1
+        Size = 2
+      end    
+      item
+        Name = 'MDV_CARROCERIA'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'MDV_RODADO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'MDV_TARA'
+        DataType = ftFMTBcd
+        Precision = 18
+        Size = 5
+      end    
+      item
+        Name = 'MDV_COD_INTERNO'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'MDV_CAPACIDADE_M3'
+        DataType = ftFMTBcd
+        Precision = 18
+        Size = 5
+      end    
+      item
+        Name = 'MDV_CAPACIDADE_KG'
+        DataType = ftFMTBcd
+        Precision = 18
+        Size = 5
+      end    
+      item
+        Name = 'MDV_PROP_CNPJ_CPF'
+        DataType = ftString
+        Precision = -1
+        Size = 14
+      end    
+      item
+        Name = 'MDV_PROP_DEFINIDO'
+        DataType = ftString
+        Precision = -1
+        Size = 1
+      end    
+      item
+        Name = 'MDV_PROP_INSC_ESTADUAL'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'MDV_PROP_NOME'
+        DataType = ftString
+        Precision = -1
+        Size = 60
+      end    
+      item
+        Name = 'MDV_PROP_RNTRC'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = 'MDV_PROP_TIPO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'MDV_PROP_UF'
+        DataType = ftString
+        Precision = -1
+        Size = 2
+      end>
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      ''
+      '-- Query reservada a inserção de Reboques'
+      ''
+      'Select'
+      'mv.MDFE_ID ,'
+      'mv.MDV_ID ,'
+      'mv.MDV_TIPO ,'
+      'mv.MDV_PLACA ,'
+      'mv.MDV_UF ,'
+      'mv.MDV_CARROCERIA ,'
+      'mv.MDV_RODADO ,'
+      'mv.MDV_TARA ,'
+      'mv.MDV_COD_INTERNO ,'
+      'mv.MDV_CAPACIDADE_M3 ,'
+      'mv.MDV_CAPACIDADE_KG ,'
+      'mv.MDV_PROP_CNPJ_CPF ,'
+      'mv.MDV_PROP_DEFINIDO ,'
+      'mv.MDV_PROP_INSC_ESTADUAL ,'
+      'mv.MDV_PROP_NOME ,'
+      'mv.MDV_PROP_RNTRC ,'
+      'mv.MDV_PROP_TIPO ,'
+      'mv.MDV_PROP_UF'
+      'FROM MDFE_VEICULOS mv'
+      'WHERE mv.MDFE_ID = :MDFE_ID'
+      'AND MDV_TIPO = ''R'''
+    )
+    InsertSQL.Strings = (
+      'insert into MDFE_VEICULOS'
+      '  (MDFE_ID, MDV_ID, MDV_TIPO, MDV_COD_INTERNO, MDV_PLACA, MDV_UF, MDV_CARROCERIA, MDV_RODADO, MDV_TARA, MDV_CAPACIDADE_KG, MDV_CAPACIDADE_M3, MDV_PROP_DEFINIDO, MDV_PROP_RNTRC, MDV_PROP_UF, MDV_PROP_TIPO, MDV_PROP_CNPJ_CPF, MDV_PROP_INSC_ESTADUAL, MDV_PROP_NOME)'
+      'values'
+      '  (:MDFE_ID, :MDV_ID, :MDV_TIPO, :MDV_COD_INTERNO, :MDV_PLACA, :MDV_UF, :MDV_CARROCERIA, :MDV_RODADO, :MDV_TARA, :MDV_CAPACIDADE_KG, :MDV_CAPACIDADE_M3, :MDV_PROP_DEFINIDO, :MDV_PROP_RNTRC, :MDV_PROP_UF, :MDV_PROP_TIPO, :MDV_PROP_CNPJ_CPF, :MDV_PROP_INSC_ESTADUAL, :MDV_PROP_NOME)'
+    )
+    UpdateSQL.Strings = (
+      'UPDATE MDFE_VEICULOS'
+      'set'
+      '  MDFE_ID = :MDFE_ID,'
+      '  MDV_ID = :MDV_ID,'
+      '  MDV_TIPO =:MDV_TIPO,'
+      '  MDV_PLACA = :MDV_PLACA,'
+      '  MDV_UF = :MDV_UF,'
+      '  MDV_CARROCERIA = :MDV_CARROCERIA,'
+      '  MDV_RODADO = :MDV_RODADO,'
+      '  MDV_TARA = :MDV_TARA,'
+      '  MDV_CAPACIDADE_KG = :MDV_CAPACIDADE_KG,'
+      '  MDV_CAPACIDADE_M3 = :MDV_CAPACIDADE_M3,'
+      '  MDV_PROP_DEFINIDO = :MDV_PROP_DEFINIDO,'
+      '  MDV_COD_INTERNO = :MDV_COD_INTERNO,'
+      '  MDV_PROP_RNTRC = :MDV_PROP_RNTRC,'
+      '  MDV_PROP_UF = :MDV_PROP_UF,'
+      '  MDV_PROP_TIPO = :MDV_PROP_TIPO,'
+      '  MDV_PROP_CNPJ_CPF  = :MDV_PROP_CNPJ_CPF,'
+      '  MDV_PROP_INSC_ESTADUAL = :MDV_PROP_INSC_ESTADUAL,'
+      '  MDV_PROP_NOME = :MDV_PROP_NOME'
+      'where'
+      ' (MDFE_ID = :MDFE_ID) and (MDV_TIPO = ''R'')'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'MDFE_ID'
+        ParamType = ptInput
+      end>
+    left = 1229
+    top = 314
+    object qryREBOQUESMDFE_ID: TLongintField
+      FieldKind = fkData
+      FieldName = 'MDFE_ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object qryREBOQUESMDV_ID: TLongintField
+      FieldKind = fkData
+      FieldName = 'MDV_ID'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object qryREBOQUESMDV_TIPO: TStringField
+      FieldKind = fkData
+      FieldName = 'MDV_TIPO'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+    object qryREBOQUESMDV_PLACA: TStringField
+      FieldKind = fkData
+      FieldName = 'MDV_PLACA'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 7
+    end
+    object qryREBOQUESMDV_UF: TStringField
+      FieldKind = fkData
+      FieldName = 'MDV_UF'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+    object qryREBOQUESMDV_CARROCERIA: TLongintField
+      FieldKind = fkData
+      FieldName = 'MDV_CARROCERIA'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryREBOQUESMDV_RODADO: TLongintField
+      FieldKind = fkData
+      FieldName = 'MDV_RODADO'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryREBOQUESMDV_TARA: TFMTBCDField
+      FieldKind = fkData
+      FieldName = 'MDV_TARA'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = False
+      MaxValue = '0'
+      MinValue = '0'
+      Size = 5
+    end
+    object qryREBOQUESMDV_COD_INTERNO: TStringField
+      FieldKind = fkData
+      FieldName = 'MDV_COD_INTERNO'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryREBOQUESMDV_CAPACIDADE_M3: TFMTBCDField
+      FieldKind = fkData
+      FieldName = 'MDV_CAPACIDADE_M3'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = False
+      MaxValue = '0'
+      MinValue = '0'
+      Size = 5
+    end
+    object qryREBOQUESMDV_CAPACIDADE_KG: TFMTBCDField
+      FieldKind = fkData
+      FieldName = 'MDV_CAPACIDADE_KG'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = False
+      MaxValue = '0'
+      MinValue = '0'
+      Size = 5
+    end
+    object qryREBOQUESMDV_PROP_CNPJ_CPF: TStringField
+      FieldKind = fkData
+      FieldName = 'MDV_PROP_CNPJ_CPF'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 14
+    end
+    object qryREBOQUESMDV_PROP_DEFINIDO: TStringField
+      FieldKind = fkData
+      FieldName = 'MDV_PROP_DEFINIDO'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+    object qryREBOQUESMDV_PROP_INSC_ESTADUAL: TStringField
+      FieldKind = fkData
+      FieldName = 'MDV_PROP_INSC_ESTADUAL'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryREBOQUESMDV_PROP_NOME: TStringField
+      FieldKind = fkData
+      FieldName = 'MDV_PROP_NOME'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qryREBOQUESMDV_PROP_RNTRC: TStringField
+      FieldKind = fkData
+      FieldName = 'MDV_PROP_RNTRC'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+    object qryREBOQUESMDV_PROP_TIPO: TLongintField
+      FieldKind = fkData
+      FieldName = 'MDV_PROP_TIPO'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryREBOQUESMDV_PROP_UF: TStringField
+      FieldKind = fkData
+      FieldName = 'MDV_PROP_UF'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+  end
+  object dsReboques: TDataSource
+    DataSet = qryREBOQUES
+    left = 1229
+    top = 375
+  end
+  object qryBusca: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'MDFE_ID'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'DATA_EMISSAO'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'SERIE_DOC'
+        DataType = ftString
+        Precision = -1
+        Size = 3
+      end    
+      item
+        Name = 'FORMA_EMISSAO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'TIPO_EMITENTE'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'MODALIDADE'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'NUMERO_DOC'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'HORA_EMISSAO'
+        DataType = ftTime
+        Precision = -1
+      end    
+      item
+        Name = 'DATA_VIAGEM'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'HORA_VIAGEM'
+        DataType = ftTime
+        Precision = -1
+      end    
+      item
+        Name = 'MODELO_DOC'
+        DataType = ftString
+        Precision = -1
+        Size = 2
+      end    
+      item
+        Name = 'PROTOCOLO_MDFE'
+        DataType = ftString
+        Precision = -1
+        Size = 15
+      end    
+      item
+        Name = 'CHAVE_MDFE'
+        DataType = ftString
+        Precision = -1
+        Size = 44
+      end    
+      item
+        Name = 'STATUS_MDFE'
+        DataType = ftString
+        Precision = -1
+        Size = 1
+      end    
+      item
+        Name = 'DATA_AUT_MDFE'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'OBS'
+        DataType = ftMemo
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = 'NF_EMPRESA'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'UF_CARREGAMENTO'
+        DataType = ftString
+        Precision = -1
+        Size = 2
+      end    
+      item
+        Name = 'UF_DESCARREGAMENTO'
+        DataType = ftString
+        Precision = -1
+        Size = 2
+      end    
+      item
+        Name = 'TIPO_TRANSPORTADOR'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'TOT_CTE'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'TOT_NFE'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'TOT_NF1_NF1A'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'TOT_MERCADORIAS'
+        DataType = ftBCD
+        Precision = 18
+        Size = 2
+      end    
+      item
+        Name = 'TOT_PESO'
+        DataType = ftFMTBcd
+        Precision = 18
+        Size = 5
+      end    
+      item
+        Name = 'UND_MEDIDA'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'ID_MD5'
+        DataType = ftString
+        Precision = -1
+        Size = 32
+      end>
+    AfterScroll = qryBuscaAfterScroll
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      'SELECT m.* FROM MDFE m where m.numero_doc = :numero_doc'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'numero_doc'
+        ParamType = ptInput
+      end>
+    left = 973
+    top = 320
+    object qryBuscaMDFE_ID: TLongintField
+      FieldKind = fkData
+      FieldName = 'MDFE_ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryBuscaDATA_EMISSAO: TDateField
+      FieldKind = fkData
+      FieldName = 'DATA_EMISSAO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryBuscaSERIE_DOC: TStringField
+      FieldKind = fkData
+      FieldName = 'SERIE_DOC'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 3
+    end
+    object qryBuscaFORMA_EMISSAO: TLongintField
+      FieldKind = fkData
+      FieldName = 'FORMA_EMISSAO'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryBuscaTIPO_EMITENTE: TLongintField
+      FieldKind = fkData
+      FieldName = 'TIPO_EMITENTE'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryBuscaMODALIDADE: TLongintField
+      FieldKind = fkData
+      FieldName = 'MODALIDADE'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryBuscaNUMERO_DOC: TLongintField
+      FieldKind = fkData
+      FieldName = 'NUMERO_DOC'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryBuscaHORA_EMISSAO: TTimeField
+      FieldKind = fkData
+      FieldName = 'HORA_EMISSAO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryBuscaDATA_VIAGEM: TDateField
+      FieldKind = fkData
+      FieldName = 'DATA_VIAGEM'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryBuscaHORA_VIAGEM: TTimeField
+      FieldKind = fkData
+      FieldName = 'HORA_VIAGEM'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryBuscaMODELO_DOC: TStringField
+      FieldKind = fkData
+      FieldName = 'MODELO_DOC'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+    object qryBuscaPROTOCOLO_MDFE: TStringField
+      FieldKind = fkData
+      FieldName = 'PROTOCOLO_MDFE'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object qryBuscaCHAVE_MDFE: TStringField
+      FieldKind = fkData
+      FieldName = 'CHAVE_MDFE'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 44
+    end
+    object qryBuscaSTATUS_MDFE: TStringField
+      FieldKind = fkData
+      FieldName = 'STATUS_MDFE'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+    object qryBuscaDATA_AUT_MDFE: TDateField
+      FieldKind = fkData
+      FieldName = 'DATA_AUT_MDFE'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryBuscaOBS: TMemoField
+      FieldKind = fkData
+      FieldName = 'OBS'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftMemo
+      Size = 8
+      Transliterate = False
+    end
+    object qryBuscaNF_EMPRESA: TLongintField
+      FieldKind = fkData
+      FieldName = 'NF_EMPRESA'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryBuscaUF_CARREGAMENTO: TStringField
+      FieldKind = fkData
+      FieldName = 'UF_CARREGAMENTO'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+    object qryBuscaUF_DESCARREGAMENTO: TStringField
+      FieldKind = fkData
+      FieldName = 'UF_DESCARREGAMENTO'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+    object qryBuscaTIPO_TRANSPORTADOR: TLongintField
+      FieldKind = fkData
+      FieldName = 'TIPO_TRANSPORTADOR'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryBuscaTOT_CTE: TLongintField
+      FieldKind = fkData
+      FieldName = 'TOT_CTE'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryBuscaTOT_NFE: TLongintField
+      FieldKind = fkData
+      FieldName = 'TOT_NFE'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryBuscaTOT_NF1_NF1A: TLongintField
+      FieldKind = fkData
+      FieldName = 'TOT_NF1_NF1A'
+      Index = 22
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryBuscaTOT_MERCADORIAS: TBCDField
+      FieldKind = fkData
+      FieldName = 'TOT_MERCADORIAS'
+      Index = 23
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 18
+      Currency = False
+      MaxValue = 0
+      MinValue = 0
+      Size = 2
+    end
+    object qryBuscaTOT_PESO: TFMTBCDField
+      FieldKind = fkData
+      FieldName = 'TOT_PESO'
+      Index = 24
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = False
+      MaxValue = '0'
+      MinValue = '0'
+      Size = 5
+    end
+    object qryBuscaUND_MEDIDA: TLongintField
+      FieldKind = fkData
+      FieldName = 'UND_MEDIDA'
+      Index = 25
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryBuscaID_MD5: TStringField
+      FieldKind = fkData
+      FieldName = 'ID_MD5'
+      Index = 26
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 32
+    end
+  end
+  object dsBusca: TDataSource
+    DataSet = qryBusca
+    left = 973
+    top = 385
+  end
+  object qryBuscaCarregamento: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'MDC_CIDADE'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'MDC_UF'
+        DataType = ftString
+        Precision = -1
+        Size = 2
+      end>
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      'SELECT'
+      'MDC_CIDADE,'
+      'MDC_UF'
+      'FROM'
+      'MDFE_LOCALCARGA'
+      'WHERE MDFE_ID =:MDFE_ID AND MDC_TIPO = ''C'''
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'mdfe_id'
+        ParamType = ptInput
+      end>
+    left = 657
+    top = 638
+    object qryBuscaCarregamentoMDC_CIDADE: TStringField
+      FieldKind = fkData
+      FieldName = 'MDC_CIDADE'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object qryBuscaCarregamentoMDC_UF: TStringField
+      FieldKind = fkData
+      FieldName = 'MDC_UF'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+  end
+  object dsBuscaCarregamento: TDataSource
+    DataSet = qryBuscaCarregamento
+    left = 657
+    top = 692
+  end
+  object qryDOCUMENTOS: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'MDD_CHAVE'
+        DataType = ftString
+        Precision = -1
+        Size = 44
+      end    
+      item
+        Name = 'MDD_PESO'
+        DataType = ftFMTBcd
+        Precision = 18
+        Size = 5
+      end    
+      item
+        Name = 'MDD_SEG_COD_BARRA'
+        DataType = ftString
+        Precision = -1
+        Size = 36
+      end    
+      item
+        Name = 'MDD_VALOR'
+        DataType = ftBCD
+        Precision = 18
+        Size = 2
+      end>
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      'SELECT'
+      'mld.mdd_chave,'
+      'mld.mdd_peso,'
+      'mld.mdd_seg_cod_barra,'
+      'mld.mdd_valor'
+      'FROM MDFE_LOCALCARGA_DOCS mld'
+      'WHERE mld.MDFE_ID =:MDFE_ID'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'MDFE_ID'
+        ParamType = ptInput
+      end>
+    left = 757
+    top = 405
+    object qryDOCUMENTOSMDD_CHAVE: TStringField
+      FieldKind = fkData
+      FieldName = 'MDD_CHAVE'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 44
+    end
+    object qryDOCUMENTOSMDD_PESO: TFMTBCDField
+      FieldKind = fkData
+      FieldName = 'MDD_PESO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Currency = False
+      MaxValue = '0'
+      MinValue = '0'
+      Size = 5
+    end
+    object qryDOCUMENTOSMDD_SEG_COD_BARRA: TStringField
+      FieldKind = fkData
+      FieldName = 'MDD_SEG_COD_BARRA'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 36
+    end
+    object qryDOCUMENTOSMDD_VALOR: TBCDField
+      FieldKind = fkData
+      FieldName = 'MDD_VALOR'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 18
+      Currency = False
+      MaxValue = 0
+      MinValue = 0
+      Size = 2
+    end
+  end
+  object dsDOCUMENTOS: TDataSource
+    DataSet = qryDOCUMENTOS
+    left = 757
+    top = 464
+  end
+end
